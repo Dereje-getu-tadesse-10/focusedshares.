@@ -1,9 +1,12 @@
 @layer base {
   :root {
-    --made-with-panda: '🐼'
-    }
+    --made-with-panda: '🐼';
+  }
 
-  *, *::before, *::after, ::backdrop {
+  *,
+  *::before,
+  *::after,
+  ::backdrop {
     --blur:   ;
     --brightness:   ;
     --contrast:   ;
@@ -31,11 +34,13 @@
     --skew-x: 0;
     --skew-y: 0;
     --scale-x: 1;
-    --scale-y: 1
-    }
+    --scale-y: 1;
+  }
 
   body {
     background: var(--colors-background);
-    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out
-    }
+    transition:
+      background-color 0.2s ease-in-out,
+      color 0.2s ease-in-out;
+  }
 }
