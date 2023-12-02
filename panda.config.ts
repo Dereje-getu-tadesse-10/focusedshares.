@@ -12,15 +12,9 @@ export default defineConfig({
     extend: {},
     semanticTokens: {
       colors: {
-        text: {
-          value: {
-            _light: "{colors.neutral.100}",
-            _dark: "{colors.neutral.900}"
-          }
-        },
         background: {
           value: {
-            _light: "{colors.pink.900}",
+            _light: "{colors.pink.100}",
             _dark: "{colors.pink.900}"
           }
         },
@@ -28,5 +22,10 @@ export default defineConfig({
     }
   },
   outdir: "styled-system",
-  // globalCss
+  globalCss: defineGlobalStyles({
+    body: {
+      bg: "background",
+      transition: "background-color 0.2s ease-in-out, color 0.2s ease-in-out"
+    }
+  }),
 });

@@ -1671,6 +1671,10 @@ const tokens = {
     "value": "1536px",
     "variable": "var(--breakpoints-2xl)"
   },
+  "colors.background": {
+    "value": "var(--colors-background)",
+    "variable": "var(--colors-background)"
+  },
   "spacing.-1": {
     "value": "calc(var(--spacing-1) * -1)",
     "variable": "var(--spacing-1)"

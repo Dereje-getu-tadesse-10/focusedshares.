@@ -33,4 +33,9 @@
     --scale-x: 1;
     --scale-y: 1
     }
+
+  body {
+    background: var(--colors-background);
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out
+    }
 }

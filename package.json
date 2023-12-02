@@ -16,6 +16,7 @@
     "@storybook/manager-api": "^7.6.3",
     "@storybook/theming": "^7.6.3",
     "next": "14.0.3",
+    "next-themes": "^0.2.1",
     "react": "^18",
     "react-dom": "^18"
   },

@@ -419,5 +419,13 @@
   --breakpoints-xl: 1280px;
   --breakpoints-2xl: 1536px
 }
+
+[data-theme=light] {
+  --colors-background: var(--colors-pink-100)
+}
+
+[data-theme=dark] {
+  --colors-background: var(--colors-pink-900)
+}
   }
   
