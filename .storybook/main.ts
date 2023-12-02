@@ -11,6 +11,7 @@ const config: StorybookConfig = {
     "@storybook/addon-onboarding",
     "@storybook/addon-interactions",
     "@storybook/addon-a11y",
+    "storybook-addon-data-theme-switcher"
   ],
   "framework": {
     "name": "@storybook/nextjs",
@@ -18,6 +19,8 @@ const config: StorybookConfig = {
   },
   "docs": {
     "autodocs": "tag"
-  }
+  },
 };
+
+
 export default config;

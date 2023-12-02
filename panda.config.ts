@@ -14,10 +14,16 @@ export default defineConfig({
       colors: {
         text: {
           value: {
-            _light: "{colors.pink.500}",
-            _dark: "{colors.pink.500}"
+            _light: "{colors.neutral.100}",
+            _dark: "{colors.neutral.900}"
           }
-        }
+        },
+        background: {
+          value: {
+            _light: "{colors.pink.900}",
+            _dark: "{colors.pink.900}"
+          }
+        },
       }
     }
   },
