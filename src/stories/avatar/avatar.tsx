@@ -5,14 +5,15 @@ const avatar = css({
   width: '50px',
   height: '50px',
   rounded: 'full',
+  outline: 'none',
 });
 
 const root = css({
-    cursor: 'pointer',
-    _focus: {
-        outline: 'none',
-        border: '2px solid black',
-    },
+  cursor: 'pointer',
+  _focus: {
+    outline: 'none',
+    border: '2px solid black',
+  },
 });
 
 export const ProfileAvatar = ({ ...args }: AvatarImageProps) => (
