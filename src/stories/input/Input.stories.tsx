@@ -25,7 +25,7 @@ const meta: Meta = {
     placeholder: 'Youtube url',
     disabled: false,
     labelFor: 'youtube-url',
-    },
+  },
 } satisfies Meta<typeof Input>;
 
 export default meta;
