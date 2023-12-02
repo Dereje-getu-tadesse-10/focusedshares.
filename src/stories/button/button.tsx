@@ -46,7 +46,13 @@ export const button = cva({
 export type ButtonVariants = RecipeVariantProps<typeof button> &
   ButtonHTMLAttributes<HTMLButtonElement>;
 
-export const Button = ({ children, visual, size, radius }: ButtonVariants) => {
+export const Button = ({
+  children,
+  visual,
+  size,
+  radius,
+  'aria-label': ariaLabel,
+}: ButtonVariants) => {
   return (
     <button className={button({ visual, size, radius })}>{children}</button>
   );

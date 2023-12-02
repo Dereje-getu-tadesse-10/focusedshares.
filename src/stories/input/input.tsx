@@ -5,12 +5,10 @@ const input = css({
   width: '100%',
   height: '40px',
   bg: 'background',
-  //   color: 'text',
   border: '1px solid var(--colors-border)',
   rounded: 'xl',
   padding: '.5rem',
-  color: 'var(--colors-text-muted)',
-
+  color: 'var(--colors-text)',
   _focus: {
     outline: 'none',
     boxShadow: '0 0 0 3px var(--colors-input-focus)',
@@ -24,9 +22,9 @@ const input = css({
 const label = css({
   color: 'var(--colors-text-muted)',
   display: 'block',
-  fontSize: 'sm',
+  fontSize: '14px',
   fontWeight: 'normal',
-  marginBottom: '.3rem'
+  marginBottom: '.3rem',
 });
 
 export type InputProps = InputHTMLAttributes<HTMLInputElement> & {

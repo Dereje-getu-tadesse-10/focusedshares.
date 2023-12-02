@@ -5,6 +5,7 @@ import { Input } from './input';
 const meta: Meta = {
   title: 'UI/Input',
   component: Input,
+  tags: ['autodocs'],
   argTypes: {
     placeholder: {
       control: 'text',
@@ -24,7 +25,7 @@ const meta: Meta = {
     placeholder: 'Youtube url',
     disabled: false,
     labelFor: 'youtube-url',
-  },
+    },
 } satisfies Meta<typeof Input>;
 
 export default meta;

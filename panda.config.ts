@@ -50,8 +50,8 @@ export default defineConfig({
         },
         textMuted: {
           value: {
-            _light: '#4B4B4E',
-            _dark: '{colors.zinc.300}',
+            _light: '{colors.zinc.900}',
+            _dark: '{colors.zinc.100}',
           },
         },
         background: {
