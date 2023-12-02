@@ -10,7 +10,6 @@ export const button = cva({
     alignItems: 'center',
     justifyContent: 'center',
     gap: '2',
-    rounded: '999px',
     cursor: 'pointer',
     fontWeight: 'medium',
   },
