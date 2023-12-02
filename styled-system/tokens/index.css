@@ -421,11 +421,11 @@
 }
 
 [data-theme=light] {
-  --colors-background: var(--colors-pink-100)
+  --colors-background: var(--colors-zinc-100)
 }
 
 [data-theme=dark] {
-  --colors-background: var(--colors-pink-900)
+  --colors-background: var(--colors-zinc-900)
 }
   }
   

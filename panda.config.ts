@@ -12,10 +12,28 @@ export default defineConfig({
     extend: {},
     semanticTokens: {
       colors: {
+        text: {
+          value: {
+            _light: "{colors.zinc.900}",
+            _dark: "{colors.zinc.100}"
+          },
+        },
+        primary: {
+          value: {
+            _light: "{colors.pink.900}",
+            _dark: "{colors.pink.700}"
+          }
+        },
+        primaryHover: {
+          value: {
+            _light: "{colors.pink.800}",
+            _dark: "{colors.pink.600}"
+          }
+        },
         background: {
           value: {
-            _light: "{colors.pink.100}",
-            _dark: "{colors.pink.900}"
+            _light: "{colors.zinc.100}",
+            _dark: "{colors.zinc.900}"
           }
         },
       }

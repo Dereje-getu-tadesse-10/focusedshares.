@@ -1,22 +1,56 @@
-import { ReactNode } from 'react';
-import { css } from '../../../styled-system/css';
+import { ButtonHTMLAttributes } from 'react';
+import { cva, type RecipeVariantProps } from '../../../styled-system/css';
+import React from 'react';
  
-export interface IButtonProps {
-  children: ReactNode;
-}
+
  
-export const Button = ({ children }: IButtonProps) => {
+export const button = cva({
+  base: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: '2',
+    rounded: '999px',
+    cursor: 'pointer',
+    fontWeight: 'medium',
+  },
+  variants: {
+    visual: {
+      solid: {
+        bg: 'primary', color: '#f5f5f5',
+        _hover: { bg: 'primaryHover' },
+        _active: { 
+          boxShadow: '0 0 0 3px rgba(131, 24, 67, .2)',
+          outline: 'none',
+         },
+        _focus: { 
+          boxShadow: '0 0 0 3px rgba(131, 24, 67, .2)',
+          outline: 'none',
+         },
+      },
+      // secondary planned
+    },
+    size: {
+      sm: { padding: '10px 15px', fontSize: '1rem' },
+      md: { padding: '14px 20px', fontSize: '4rem' },
+    },  
+    radius: {
+      full: { rounded: 'full' },
+      xl: { rounded: 'xl' },
+    }
+  },
+  defaultVariants: {
+    visual: 'solid',
+    size: 'sm',
+    radius: 'full',
+  }
+})
+
+export type ButtonVariants = RecipeVariantProps<typeof button> & ButtonHTMLAttributes<HTMLButtonElement>;
+
+export const Button = ({ children, visual, size, radius }:ButtonVariants) => {
   return (
-    <button
-      className={css({
-        bg: 'background',
-        fontSize: "1rem",
-        fontWeight: 'bold',
-        color: 'text',
-        border: 'none',
-        cursor: 'pointer',
-      })}
-    >
+    <button className={button({visual, size, radius})}>
       {children}
     </button>
   )
