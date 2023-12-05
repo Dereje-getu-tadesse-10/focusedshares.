@@ -29,7 +29,7 @@ const trigger = css({
 const content = css({
   boxSizing: 'border-box',
   zIndex: '102',
-  bg: 'var(--background)',
+  bg: 'var(--colors-background)',
   borderRadius: 'sm',
   p: 1,
   border: '1px solid var(--colors-input-focus)',
