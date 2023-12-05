@@ -118,10 +118,3 @@ export const AppMenu = ({ src, alt }: { src: string; alt: string }) => (
     </Menu.Positioner>
   </Menu.Root>
 );
-
-// {menuItems.map((item) => (
-//           <Menu.Item className={menu} id={item.id} key={item.id} onClick={item.onClick}>
-//             <Menu.Item id={item.id} >{item.icon}</Menu.Item>
-//             <Menu.Item id={item.id}>{item.label}</Menu.Item>
-//           </Menu.Item>
-//         ))}
