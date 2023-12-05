@@ -3,6 +3,7 @@ import Image from 'next/image';
 
 import { AppMenu } from '../menu/menu';
 import { css } from '../../../styled-system/css';
+import { Switcher } from '../switcher/switcher';
 
 export const Navbar = () => {
   return (
@@ -57,6 +58,7 @@ export const Navbar = () => {
             color: 'var(--colors-text-muted)',
           })}
         >
+          <Switcher />
           <AppMenu
             alt='hello'
             src='https://avatars.githubusercontent.com/u/583231?v=4'
