@@ -1,3 +1,4 @@
+'use client';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useSession, signIn } from 'next-auth/react';
@@ -5,15 +6,14 @@ import { AppMenu } from '../menu/menu';
 import { css } from '../../../styled-system/css';
 import { Switcher } from '../switcher/switcher';
 import { Button } from '../button/button';
+import Logo from '../../../public/icon.png';
 
 export const Navbar = () => {
   const { data: session } = useSession();
   return (
     <header
       className={css({
-        maxW: '1200px',
-        margin: '0 auto',
-        padding: '0 1rem',
+        margin: '1rem auto',
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
@@ -40,12 +40,7 @@ export const Navbar = () => {
             })}
           >
             <li>
-              <Image
-                src='https://www.focusedshares.com/logo.png'
-                alt='FocusedShares'
-                width={70}
-                height={70}
-              />
+              <Image src={Logo} alt='FocusedShares' width={70} height={70} />
             </li>
             <li>
               <Link href={'/songs'}>Songs</Link>
@@ -64,7 +59,9 @@ export const Navbar = () => {
           {session ? (
             <AppMenu alt='hello' src={session?.user?.image as string} />
           ) : (
-            <Button onClick={() => signIn('google')}>Sign In</Button>
+            <Button visual='solid' onClick={() => signIn('google')}>
+              Sign In
+            </Button>
           )}
         </div>
       </nav>

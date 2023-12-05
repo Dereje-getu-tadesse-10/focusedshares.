@@ -67,7 +67,8 @@ export default defineConfig({
   globalCss: defineGlobalStyles({
     body: {
       bg: 'background',
-      transition: 'background-color 0.2s ease-in-out, color 0.2s ease-in-out',
+      maxWidth: '1200px',
+      mx: 'auto',
     },
   }),
 });

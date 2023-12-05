@@ -4,7 +4,6 @@ import { css } from '../../../styled-system/css';
 
 export const Switcher = () => {
   const { theme, setTheme } = useTheme();
-
   return (
     <button
       className={css({

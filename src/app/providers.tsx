@@ -2,7 +2,7 @@
 import { SessionProvider } from 'next-auth/react';
 import { ThemeProvider } from 'next-themes';
 
-export const Providers = ({ children }: React.PropsWithChildren<{}>) => {
+export const Providers = ({ children }: { children: React.ReactNode }) => {
   return (
     <SessionProvider>
       <ThemeProvider>{children}</ThemeProvider>
