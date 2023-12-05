@@ -1,12 +1,13 @@
 import Link from 'next/link';
 import Image from 'next/image';
-
+import { useSession, signIn } from 'next-auth/react';
 import { AppMenu } from '../menu/menu';
 import { css } from '../../../styled-system/css';
 import { Switcher } from '../switcher/switcher';
+import { Button } from '../button/button';
 
 export const Navbar = () => {
-
+  const { data: session } = useSession();
   return (
     <header
       className={css({
@@ -60,10 +61,11 @@ export const Navbar = () => {
           })}
         >
           <Switcher />
-          <AppMenu
-            alt='hello'
-            src='https://avatars.githubusercontent.com/u/583231?v=4'
-          />
+          {session ? (
+            <AppMenu alt='hello' src={session?.user?.image as string} />
+          ) : (
+            <Button onClick={() => signIn('google')}>Sign In</Button>
+          )}
         </div>
       </nav>
     </header>

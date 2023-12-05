@@ -17,11 +17,11 @@ export const button = cva({
         color: '#f5f5f5',
         _hover: { bg: 'var(--colors-primary-hover)' },
         _active: {
-          boxShadow: '0 0 0 3px rgba(131, 24, 67, .2)',
+          boxShadow: '0 0 0 3px rgba(131, 24, 67, .5)',
           outline: 'none',
         },
         _focus: {
-          boxShadow: '0 0 0 3px rgba(131, 24, 67, .2)',
+          boxShadow: '0 0 0 3px rgba(131, 24, 67, .5)',
           outline: 'none',
         },
       },
