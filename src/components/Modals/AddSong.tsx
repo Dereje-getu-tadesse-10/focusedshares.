@@ -60,7 +60,6 @@ export const AddSong = NiceModal.create(() => {
                 Add a new song to the playlist
               </Dialog.Description>
               <YoutubeForm />
-              sfdf
             </Dialog.Content>
           </Dialog.Positioner>
         </Portal>

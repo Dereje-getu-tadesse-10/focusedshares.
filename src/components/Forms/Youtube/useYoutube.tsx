@@ -40,7 +40,7 @@ export const useYoutubeForm = () => {
   });
 
   const request = async (data: YoutubeFormSchema) => {
-    const response = await fetch('/api/v1/songs/add', {
+    const response = await fetch('/api/v1/songs', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

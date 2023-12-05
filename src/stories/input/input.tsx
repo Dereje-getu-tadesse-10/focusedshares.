@@ -5,8 +5,8 @@ const input = css({
   width: '100%',
   height: '40px',
   bg: 'background',
-  border: '1px solid var(--colors-border)',
-  rounded: 'xl',
+  border: '1px solid var(--colors-input-focus)',
+  rounded: 'sm',
   padding: '.5rem',
   color: 'var(--colors-text)',
   _focus: {

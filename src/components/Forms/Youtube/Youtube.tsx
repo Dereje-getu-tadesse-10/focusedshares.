@@ -4,6 +4,7 @@ import { Controller } from 'react-hook-form';
 
 import { Button } from '@/src/stories/button/button';
 import { GenreSelect } from '@/src/stories/select/select';
+import { Input } from '@/src/stories/input/input';
 
 export const YoutubeForm = () => {
   const { handleSubmit, onSubmit, register, setValue, formState, control } =
@@ -16,38 +17,26 @@ export const YoutubeForm = () => {
           mt: '1rem',
         })}
       >
-        <label
-          className={css({
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '.2rem',
-            fontSize: 'sm',
-          })}
-        >
-          Youtube url
-          <input
-            placeholder='https://www.youtube.com/watch?v=jfKfPfyJRdk'
-            {...register('url')}
-            className={css({
-              border: '1px solid var(--border)',
-              borderRadius: 'sm',
-              padding: '.5rem',
-              outline: 'none',
-              backgroundColor: 'var(--background)',
-              height: '42px',
-              color: 'gray.500 !important',
-            })}
-          />
-        </label>
+        <Controller
+          name='url'
+          control={control}
+          render={({ field: { onChange, value } }) => (
+            <Input
+              placeholder='https://www.youtube.com/watch?v=jfKfPfyJRdk'
+              label='Youtube url'
+              labelFor='url'
+              value={value}
+              onChange={onChange}
+            />
+          )}
+        />
       </div>
       <div className={css({ mt: '3' })}>
         <Controller
           name='category'
           control={control}
           render={({ field: { onChange, value } }) => (
-            <>
-              <GenreSelect value={value} onChange={onChange} />
-            </>
+            <GenreSelect value={value} onChange={onChange} />
           )}
         />
         <div
