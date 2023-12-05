@@ -17,7 +17,7 @@ const trigger = css({
   rounded: 'sm',
   padding: '.5rem',
   outline: 'none',
-  bg: 'var(--background)',
+  bg: 'var(--colors-background)',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
