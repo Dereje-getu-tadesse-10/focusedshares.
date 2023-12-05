@@ -75,5 +75,6 @@ model YoutubeSong {
   category      Category
   youtubeId     String
   duration      String
+  description   String?
   @@unique([youtubeId])
 }

@@ -1,3 +1,18 @@
+// get youtube search results
+export const getSongYt = async ({ videoId }: { videoId: string }) => {
+  const response = await fetch(
+    `https://www.googleapis.com/youtube/v3/videos?part=snippet,contentDetails,statistics&id=${videoId}&key=${process.env.GOOGLE_API}`,
+    {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    }
+  );
+
+  return response.json();
+};
+
 // extract video id from youtube url
 export const videoId = ({ url }: { url: string }) => {
   const regex = /(?:\?v=|&v=|youtu\.be\/)(.*?)(?:\?|&|$)/;
