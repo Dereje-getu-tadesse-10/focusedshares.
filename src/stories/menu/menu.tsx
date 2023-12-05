@@ -40,7 +40,7 @@ const menuItems = [
 ];
 
 const content = css({
-  bg: 'var(--background)',
+  bg: 'var(--colors-background)',
   border: '1px solid var(--colors-input-focus)',
   outline: 'none',
   rounded: 'sm',
