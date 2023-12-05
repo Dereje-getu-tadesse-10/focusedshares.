@@ -52,8 +52,15 @@ export const Button = ({
   size,
   radius,
   'aria-label': ariaLabel,
+  ...props
 }: ButtonVariants) => {
   return (
-    <button className={button({ visual, size, radius })}>{children}</button>
+    <button
+      aria-label={ariaLabel}
+      {...props}
+      className={button({ visual, size, radius })}
+    >
+      {children}
+    </button>
   );
 };

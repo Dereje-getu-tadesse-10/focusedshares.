@@ -2,6 +2,7 @@ import { Menu } from '@ark-ui/react';
 import { LogOut, Plus, Trash2 } from 'lucide-react';
 import { ProfileAvatar } from '../avatar/avatar';
 import { css } from '../../../styled-system/css';
+import { signOut } from 'next-auth/react';
 
 const menuItems = [
   {
@@ -19,9 +20,7 @@ const menuItems = [
         id: 'logout',
         label: 'Logout',
         icon: <LogOut size={16} />,
-        onClick: () => {
-          console.log('logout');
-        },
+        onClick: () => signOut(),
       },
     ],
   },

@@ -13,7 +13,7 @@ export const Navbar = () => {
   return (
     <header
       className={css({
-        margin: '1rem auto',
+        margin: '1rem',
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
@@ -57,9 +57,17 @@ export const Navbar = () => {
         >
           <Switcher />
           {session ? (
-            <AppMenu alt='hello' src={session?.user?.image as string} />
+            <AppMenu
+              alt='hello'
+              src={session?.user?.image as string}
+              key={'app-menu'}
+            />
           ) : (
-            <Button visual='solid' onClick={() => signIn('google')}>
+            <Button
+              visual='solid'
+              onClick={() => signIn('google')}
+              aria-label='Sign In'
+            >
               Sign In
             </Button>
           )}
