@@ -6,6 +6,7 @@ import { css } from '../../../styled-system/css';
 import { Switcher } from '../switcher/switcher';
 
 export const Navbar = () => {
+
   return (
     <header
       className={css({
