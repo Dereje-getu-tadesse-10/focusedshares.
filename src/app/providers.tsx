@@ -1,14 +1,21 @@
 'use client';
+import React, { useState } from 'react';
 import NiceModal from '@ebay/nice-modal-react';
 import { SessionProvider } from 'next-auth/react';
 import { ThemeProvider } from 'next-themes';
+import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
+
+const queryClient = new QueryClient();
 
 export const Providers = ({ children }: { children: React.ReactNode }) => {
+  const [client] = useState(queryClient);
   return (
     <SessionProvider>
-      <ThemeProvider>
-        <NiceModal.Provider>{children}</NiceModal.Provider>
-      </ThemeProvider>
+      <QueryClientProvider client={client}>
+        <ThemeProvider>
+          <NiceModal.Provider>{children}</NiceModal.Provider>
+        </ThemeProvider>
+      </QueryClientProvider>
     </SessionProvider>
   );
 };
