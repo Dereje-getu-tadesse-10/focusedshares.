@@ -1,7 +1,7 @@
 import React from 'react';
 import { Dialog, Portal } from '@ark-ui/react';
 import NiceModal, { useModal } from '@ebay/nice-modal-react';
-// import { YoutubeForm } from '../Form/YoutubeForm';
+import { YoutubeForm } from '../Forms/Youtube/Youtube';
 import { css } from '@/styled-system/css';
 
 export const AddSong = NiceModal.create(() => {
@@ -59,7 +59,7 @@ export const AddSong = NiceModal.create(() => {
               >
                 Add a new song to the playlist
               </Dialog.Description>
-              {/* <YoutubeForm /> */}
+              <YoutubeForm />
               sfdf
             </Dialog.Content>
           </Dialog.Positioner>
