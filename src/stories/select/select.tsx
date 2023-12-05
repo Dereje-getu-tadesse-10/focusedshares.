@@ -129,9 +129,6 @@ export const GenreSelect = ({
           <Select.ValueText placeholder='Select a Genre' id={'genre'}>
             {value}
           </Select.ValueText>
-          <Select.Indicator>
-            <ChevronDownIcon />
-          </Select.Indicator>
         </Select.Trigger>
       </Select.Control>
       <Select.Positioner
