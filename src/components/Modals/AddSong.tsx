@@ -22,7 +22,7 @@ export const AddSong = NiceModal.create(() => {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              zIndex: '101',
+              zIndex: '103',
               left: '50%',
               top: '50%',
               transform: 'translateX(-50%) translateY(-50%)',
@@ -30,9 +30,9 @@ export const AddSong = NiceModal.create(() => {
           >
             <Dialog.Content
               className={css({
-                backgroundColor: 'var(--background)',
+                backgroundColor: 'var(--colors-background)',
                 borderRadius: 'sm',
-                border: '1px solid var(--border)',
+                border: '1px solid var(--colors-input-focus)',
                 width: '100%',
                 maxWidth: '500px',
                 maxHeight: '500px',
@@ -45,7 +45,7 @@ export const AddSong = NiceModal.create(() => {
                 className={css({
                   fontWeight: '600',
                   fontSize: 'lg',
-                  color: 'var(--text)',
+                  color: 'var(--colors-text)',
                 })}
               >
                 Add new song
@@ -54,7 +54,7 @@ export const AddSong = NiceModal.create(() => {
                 className={css({
                   fontWeight: '400',
                   fontSize: 'sm',
-                  color: 'var(--text-tertiary)',
+                  color: 'var(--colors-text-muted)',
                 })}
               >
                 Add a new song to the playlist

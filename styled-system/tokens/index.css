@@ -428,7 +428,8 @@
   --colors-error: var(--colors-red-900);
   --colors-input-focus: var(--colors-zinc-200);
   --colors-text-muted: var(--colors-zinc-900);
-  --colors-background: var(--colors-zinc-100)
+  --colors-background: var(--colors-zinc-100);
+  --colors-backdrop: rgba(255, 255, 255, 0.5)
 }
 
 [data-theme=dark] {
@@ -439,7 +440,8 @@
   --colors-error: var(--colors-red-700);
   --colors-input-focus: var(--colors-zinc-800);
   --colors-text-muted: var(--colors-zinc-100);
-  --colors-background: var(--colors-zinc-900)
+  --colors-background: var(--colors-zinc-900);
+  --colors-backdrop: rgba(0, 0, 0, .8)
 }
   }
   

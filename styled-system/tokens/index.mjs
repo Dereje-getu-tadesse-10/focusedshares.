@@ -1703,6 +1703,10 @@ const tokens = {
     "value": "var(--colors-background)",
     "variable": "var(--colors-background)"
   },
+  "colors.backdrop": {
+    "value": "var(--colors-backdrop)",
+    "variable": "var(--colors-backdrop)"
+  },
   "spacing.-1": {
     "value": "calc(var(--spacing-1) * -1)",
     "variable": "var(--spacing-1)"
