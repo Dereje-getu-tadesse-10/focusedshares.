@@ -3,6 +3,8 @@ import { LogOut, Plus, Trash2 } from 'lucide-react';
 import { ProfileAvatar } from '../avatar/avatar';
 import { css } from '../../../styled-system/css';
 import { signOut } from 'next-auth/react';
+import NiceModal from '@ebay/nice-modal-react';
+import { AddSong } from '@/src/components/Modals/AddSong';
 
 const menuItems = [
   {
@@ -12,9 +14,7 @@ const menuItems = [
         id: 'song',
         label: 'Add new song',
         icon: <Plus size={16} />,
-        onClick: () => {
-          console.log('song');
-        },
+        onClick: () => NiceModal.show(AddSong),
       },
       {
         id: 'logout',
