@@ -20,26 +20,26 @@ export const {
     }),
   ],
   secret: NEXTAUTH_SECRET,
-    session: {
-      strategy: 'jwt',
+  session: {
+    strategy: 'jwt',
+  },
+  callbacks: {
+    jwt({ token, account, user }) {
+      if (account) {
+        token.accessToken = account.access_token;
+        token.id = user?.id;
+      }
+      return token;
     },
-    callbacks: {
-      jwt({ token, account, user }) {
-        if (account) {
-          token.accessToken = account.access_token;
-          token.id = user?.id;
-        }
-        return token;
-      },
-      session({ session, token }) {
-        session.user.id = token.id;
-        return session;
-      },
+    session({ session, token }) {
+      session.user.id = token.id;
+      return session;
     },
-    // pages: {
-    //   signIn: '/',
-    //   error: '/',
-    //   signOut: '/',
-    // },
+  },
+  // pages: {
+  //   signIn: '/',
+  //   error: '/',
+  //   signOut: '/',
+  // },
   debug: true,
 });

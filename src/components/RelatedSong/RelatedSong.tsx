@@ -15,4 +15,3 @@ export const RelatedSong = ({ song }: { song: MinimalSong[] }) => (
     ))}
   </div>
 );
-
