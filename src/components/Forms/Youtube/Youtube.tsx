@@ -3,7 +3,7 @@ import { css } from '@/styled-system/css';
 import { Controller } from 'react-hook-form';
 
 import { Button } from '@/src/stories/button/button';
-import { GenreSelect } from '@/src/stories/select/select';
+import { GenreSelect } from '@/src/components/GenresSelect/GenresSelect';
 import { Input } from '@/src/stories/input/input';
 
 export const YoutubeForm = () => {
