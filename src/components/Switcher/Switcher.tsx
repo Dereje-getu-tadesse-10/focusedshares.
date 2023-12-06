@@ -1,6 +1,6 @@
 import { useTheme } from 'next-themes';
 import { Moon, Sun } from 'lucide-react';
-import { css } from '../../../styled-system/css';
+import { css } from '@/styled-system/css';
 
 export const Switcher = () => {
   const { theme, setTheme } = useTheme();

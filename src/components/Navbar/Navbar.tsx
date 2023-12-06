@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { useSession, signIn } from 'next-auth/react';
 import { AppMenu } from '@/src/components/Menu/Menu';
 import { css } from '@/styled-system/css';
-import { Switcher } from '@/src/stories/switcher/switcher';
+import { Switcher } from '@/src/components/Switcher/Switcher';
 import { Button } from '@/src/stories/button/button';
 import Link from 'next/link';
 
