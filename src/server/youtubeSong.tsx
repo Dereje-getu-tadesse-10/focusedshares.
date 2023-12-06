@@ -24,3 +24,12 @@ export const getSongs = async (limit?: number) => {
   });
   return res;
 };
+
+export const getSong = async (id: string) => {
+  const res: Song | null = await prisma.youtubeSong.findUnique({
+    where: {
+      id,
+    },
+  });
+  return res;
+};
