@@ -4,7 +4,7 @@ import { css } from '@/styled-system/css';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const ContainerSongs = ({ songs }: { songs: MinimalSong[] }) => {
+export const ContainerSongs = ({ songs }: { songs: MinimalSong[] }) => {
   return (
     <section
       className={css({
@@ -68,5 +68,3 @@ export const Song = ({ song }: { song: MinimalSong }) => {
     </Link>
   );
 };
-
-export default ContainerSongs;
