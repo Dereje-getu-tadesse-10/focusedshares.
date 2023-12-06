@@ -4,6 +4,7 @@ import { getSong, getSongs } from '@/src/server/youtubeSong';
 import { css } from '@/styled-system/css';
 import { YoutubeEmbed } from '@/src/components/YoutubeEmbed/YoutubeEmbed';
 import { WrapperSong } from '@/src/components/WrapperSong/WrapperSong';
+import { RelatedSong } from '@/src/components/RelatedSong/RelatedSong';
 
 export async function generateMetadata(
   { params }: { params: { song: string } },
@@ -54,6 +55,7 @@ export default async function SongPage({
     >
       <WrapperSong>
         <YoutubeEmbed id={id} title={song.title} song={song} />
+        <RelatedSong song={songs} />
       </WrapperSong>
     </main>
   );
