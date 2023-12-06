@@ -4,6 +4,7 @@ import './globals.css';
 import { Providers } from './providers';
 import { Navbar } from '../stories/navbar/navbar';
 import { Footer } from '../components/Footer/Footer';
+import Script from 'next/script';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -52,6 +53,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
+      <head>
+        <Script
+          src='https://eu.umami.is/script.js'
+          data-website-id='05b1b74c-1c34-418a-871b-5f04df643156'
+          async
+        />
+      </head>
       <body className={inter.className}>
         <Providers>
           <Navbar />
