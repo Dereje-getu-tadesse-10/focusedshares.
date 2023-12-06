@@ -3,27 +3,27 @@ CREATE TYPE "Category" AS ENUM ('KPOP', 'JAZZ', 'LOFI', 'CLASSICAL', 'AMBIENT', 
 
 -- CreateTable
 CREATE TABLE "Account" (
-    "id" TEXT NOT NULL,
-    "userId" TEXT NOT NULL,
-    "type" TEXT NOT NULL,
-    "provider" TEXT NOT NULL,
-    "providerAccountId" TEXT NOT NULL,
-    "refresh_token" TEXT,
-    "access_token" TEXT,
-    "expires_at" INTEGER,
-    "token_type" TEXT,
-    "scope" TEXT,
-    "id_token" TEXT,
-    "session_state" TEXT,
+    "id" STRING NOT NULL,
+    "userId" STRING NOT NULL,
+    "type" STRING NOT NULL,
+    "provider" STRING NOT NULL,
+    "providerAccountId" STRING NOT NULL,
+    "refresh_token" STRING,
+    "access_token" STRING,
+    "expires_at" INT4,
+    "token_type" STRING,
+    "scope" STRING,
+    "id_token" STRING,
+    "session_state" STRING,
 
     CONSTRAINT "Account_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
 CREATE TABLE "Session" (
-    "id" TEXT NOT NULL,
-    "sessionToken" TEXT NOT NULL,
-    "userId" TEXT NOT NULL,
+    "id" STRING NOT NULL,
+    "sessionToken" STRING NOT NULL,
+    "userId" STRING NOT NULL,
     "expires" TIMESTAMP(3) NOT NULL,
 
     CONSTRAINT "Session_pkey" PRIMARY KEY ("id")
@@ -31,33 +31,33 @@ CREATE TABLE "Session" (
 
 -- CreateTable
 CREATE TABLE "User" (
-    "id" TEXT NOT NULL,
-    "name" TEXT,
-    "description" TEXT,
-    "email" TEXT,
+    "id" STRING NOT NULL,
+    "name" STRING,
+    "description" STRING,
+    "email" STRING,
     "emailVerified" TIMESTAMP(3),
-    "image" TEXT,
+    "image" STRING,
 
     CONSTRAINT "User_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
 CREATE TABLE "VerificationToken" (
-    "identifier" TEXT NOT NULL,
-    "token" TEXT NOT NULL,
+    "identifier" STRING NOT NULL,
+    "token" STRING NOT NULL,
     "expires" TIMESTAMP(3) NOT NULL
 );
 
 -- CreateTable
 CREATE TABLE "YoutubeSong" (
-    "id" TEXT NOT NULL,
-    "title" TEXT NOT NULL,
-    "thumb" TEXT NOT NULL,
-    "channelTitle" TEXT NOT NULL,
-    "viewCount" TEXT NOT NULL,
+    "id" STRING NOT NULL,
+    "title" STRING NOT NULL,
+    "thumb" STRING NOT NULL,
+    "channelTitle" STRING NOT NULL,
+    "viewCount" STRING NOT NULL,
     "category" "Category" NOT NULL,
-    "youtubeId" TEXT NOT NULL,
-    "duration" TEXT NOT NULL,
+    "youtubeId" STRING NOT NULL,
+    "duration" STRING NOT NULL,
 
     CONSTRAINT "YoutubeSong_pkey" PRIMARY KEY ("id")
 );
