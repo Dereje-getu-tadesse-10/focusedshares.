@@ -1,36 +1,28 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Focused Shares
 
-## Getting Started
+[Live](https://focusedshares.com)
 
-First, run the development server:
+##### Elevate Your Focus with Focus Song
+Discover a world combining focus and music, featuring lo-fi hip hop to rain sounds. Share your favorite YouTube videos in our diverse musical community.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+![App cloud](https://res.cloudinary.com/ddugf28mx/image/upload/f_auto,q_auto/v1/focusedshares/onpc4fkgcjv6neilvics)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Features
+- [x] Create an account
+- [x] Login to your account
+- [x] Delete your account
+- [x] Share your favorite YouTube videos
+- [x] Discover new music
+- [x] Light and dark mode (theme to be improved)
+- [ ] Like your favorite video
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Technologies
+- [Next.js](https://nextjs.org/)
+- [PandaCss](https://panda-css.com/)
+- [Ark UI](https://ark-ui.com/)
+- [Prisma Accelerate](https://www.prisma.io/data-platform/accelerate)
+- [CockroachDB](https://www.cockroachlabs.com/)
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Deployment
+- [Cloudflare workers](https://workers.cloudflare.com)
