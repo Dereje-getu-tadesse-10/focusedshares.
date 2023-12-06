@@ -28,8 +28,6 @@ export const useYoutubeForm = () => {
 
   const {
     handleSubmit,
-    register,
-    setValue,
     control,
     formState: { errors, isDirty, isLoading, isValid },
   } = useForm<YoutubeFormSchema>({
@@ -76,8 +74,6 @@ export const useYoutubeForm = () => {
     },
     handleSubmit,
     onSubmit,
-    register,
-    setValue,
     control,
   };
 };

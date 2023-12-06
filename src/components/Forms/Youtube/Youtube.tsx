@@ -7,8 +7,7 @@ import { GenreSelect } from '@/src/stories/select/select';
 import { Input } from '@/src/stories/input/input';
 
 export const YoutubeForm = () => {
-  const { handleSubmit, onSubmit, register, setValue, formState, control } =
-    useYoutubeForm();
+  const { handleSubmit, onSubmit, formState, control } = useYoutubeForm();
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -48,13 +47,7 @@ export const YoutubeForm = () => {
         >
           <Button
             type={'submit'}
-            disabled={
-              !formState.isDirty ||
-              !formState.isValid ||
-              !formState.isDirty ||
-              !formState.isValid ||
-              formState.isLoading
-            }
+            disabled={!formState.isValid || formState.isSubmitting}
           >
             Add song
           </Button>
