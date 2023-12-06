@@ -2,8 +2,8 @@ import { Avatar, AvatarImageProps } from '@ark-ui/react';
 import { css } from '../../../styled-system/css';
 
 const avatar = css({
-  width: '45px',
-  height: '45px',
+  width: '40px',
+  height: '40px',
   rounded: 'full',
   outline: 'none',
 });
