@@ -88,7 +88,7 @@ export const AppMenu = ({ src, alt }: { src: string; alt: string }) => (
     <Menu.Positioner>
       <Menu.Content className={content}>
         {menuItems.map((item) => (
-          <Menu.ItemGroup id={item.groupeName}>
+          <Menu.ItemGroup key={item.groupeName} id={item.groupeName}>
             <Menu.ItemGroupLabel
               className={menuGroupLabel}
               htmlFor={item.groupeName}
