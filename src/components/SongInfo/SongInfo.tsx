@@ -1,4 +1,4 @@
-import { truncate } from '@/src/lib/youtube';
+import { formatNumber, truncate } from '@/src/lib/youtube';
 import { Song } from '@/src/server/youtubeSong';
 import { css } from '@/styled-system/css';
 import Link from 'next/link';
@@ -18,12 +18,38 @@ export const SongInfo = ({ song }: { song: Song }) => {
         className={css({
           fontWeight: '500',
           color: 'var(--colors-text-muted)',
-          fontSize: 'xs',
+          fontSize: 'sm',
         })}
       >
         {song.channelTitle}
       </Link>
-      <p>{song.description}</p>
+      <div
+        className={css({
+          mt: 2,
+          mb: 2,
+          fontSize: 'sm',
+          fontWeight: '500',
+          color: 'var(--colors-text-muted)',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '1',
+        })}
+      >
+        <p>
+          {song.category} •{' '}
+          {song.duration === '0:00' ? 'In live' : song.duration}{' '}
+        </p>
+        • <p>{formatNumber(song.viewCount)} views</p>
+      </div>
+      <p
+        className={css({
+          fontSize: 'sm',
+          fontWeight: '500',
+          color: 'var(--colors-text-muted)',
+        })}
+      >
+        The number of views is not synchronized in real time with YouTube.
+      </p>
     </div>
   );
 };
