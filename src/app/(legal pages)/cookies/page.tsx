@@ -1,3 +1,43 @@
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Cookie Policy - Focused Shares',
+  description:
+    'Focused Shares cookie policy. Learn more about our cookie policy.',
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://res.cloudinary.com/ddugf28mx/image/upload/f_auto,q_auto/v1/focusedshares/mut3m9pdjxuzlc3z6jxn',
+    title: 'Cookie Policy - Focused Shares',
+    countryName: 'United States',
+    description:
+      'Focused Shares cookie policy. Learn more about our cookie policy.',
+    siteName: 'Cookie Policy - Focused Shares',
+    images: [
+      {
+        url: 'https://res.cloudinary.com/ddugf28mx/image/upload/f_auto,q_auto/v1/focusedshares/mut3m9pdjxuzlc3z6jxn',
+        width: 1200,
+        height: 630,
+        alt: 'Cookie Policy - Focused Shares',
+      },
+    ],
+  },
+  twitter: {
+    title: 'Cookie Policy - Focused Shares',
+    description:
+      'Focused Shares cookie policy. Learn more about our cookie policy.',
+    images: [
+      {
+        url: 'https://res.cloudinary.com/ddugf28mx/image/upload/f_auto,q_auto/v1/focusedshares/mut3m9pdjxuzlc3z6jxn',
+        width: 1200,
+        height: 630,
+        alt: 'Cookie Policy - Focused Shares',
+      },
+    ],
+  },
+  robots: 'index, follow',
+};
+
 const Page = () => (
   <main className='terms'>
     <h1>Cookie Policy for Focused shares</h1>
