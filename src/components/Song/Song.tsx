@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 export const ContainerSongs = ({ songs }: { songs: MinimalSong[] }) => {
   return (
-    <div
+    <section
       className={css({
         display: 'grid',
         mx: 4,
@@ -19,7 +19,7 @@ export const ContainerSongs = ({ songs }: { songs: MinimalSong[] }) => {
       {songs.map((song) => (
         <Song key={song.youtubeId} song={song} />
       ))}
-    </div>
+    </section>
   );
 };
 
