@@ -75,7 +75,6 @@ export const POST = async (request: Request) => {
       viewCount: response.items[0].statistics.viewCount,
       youtubeId: body.data.url,
       duration: formatDuration(response.items[0].contentDetails.duration),
-      desctiption: response.items[0].snippet.description,
     };
     console.log(response.items[0].snippet);
     await prisma.youtubeSong.create({

@@ -4,7 +4,7 @@ import { getSongs } from '@/src/server/youtubeSong';
 import { css } from '@/styled-system/css';
 
 export const metadata: Metadata = {
-  title: 'Focused Shares - Songs',
+  title: 'Songs',
   description: 'A collection of songs to help you focus on your work.',
   openGraph: {
     type: 'website',

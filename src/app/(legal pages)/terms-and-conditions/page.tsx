@@ -1,3 +1,43 @@
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Terms and conditions - Focused Shares',
+  description:
+    'Focused Shares Terms and conditions. Learn more about our terms and conditions.',
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://res.cloudinary.com/ddugf28mx/image/upload/f_auto,q_auto/v1/focusedshares/mut3m9pdjxuzlc3z6jxn',
+    title: 'Terms and conditions - Focused Shares',
+    countryName: 'United States',
+    description:
+      'Focused Shares Terms and conditions. Learn more about our terms and conditions.',
+    siteName: 'Terms and conditions - Focused Shares',
+    images: [
+      {
+        url: 'https://res.cloudinary.com/ddugf28mx/image/upload/f_auto,q_auto/v1/focusedshares/mut3m9pdjxuzlc3z6jxn',
+        width: 1200,
+        height: 630,
+        alt: 'Terms and conditions - Focused Shares',
+      },
+    ],
+  },
+  twitter: {
+    title: 'Terms and conditions - Focused Shares',
+    description:
+      'Focused Shares Terms and conditions. Learn more about our terms and conditions.',
+    images: [
+      {
+        url: 'https://res.cloudinary.com/ddugf28mx/image/upload/f_auto,q_auto/v1/focusedshares/mut3m9pdjxuzlc3z6jxn',
+        width: 1200,
+        height: 630,
+        alt: 'Terms and conditions - Focused Shares',
+      },
+    ],
+  },
+  robots: 'index, follow',
+};
+
 const Page = () => (
   <main className='terms'>
     <h1>Web Site Terms and Conditions of Use</h1>
