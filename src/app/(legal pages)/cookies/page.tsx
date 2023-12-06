@@ -1,5 +1,5 @@
 const Page = () => (
-  <>
+  <main className='terms'>
     <h1>Cookie Policy for Focused shares</h1>
 
     <p>
@@ -123,7 +123,7 @@ const Page = () => (
     <ul>
       <li>Email: hello@dereje.fr</li>
     </ul>
-  </>
+  </main>
 );
 
 export default Page;
