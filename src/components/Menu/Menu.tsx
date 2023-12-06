@@ -5,6 +5,7 @@ import { css } from '@/styled-system/css';
 import { signOut } from 'next-auth/react';
 import { AddSong } from '@/src/components/Modals/AddSong';
 import NiceModal from '@ebay/nice-modal-react';
+import { ConfirmDeleteAccount } from '../Modals/ConfirmDeleteAccount';
 
 const menuItems = [
   {
@@ -14,10 +15,7 @@ const menuItems = [
         id: 'song',
         label: 'Add new song',
         icon: <Plus size={16} />,
-        onClick: () => {
-          console.log('add song');
-          NiceModal.show(AddSong);
-        },
+        onClick: () => NiceModal.show(AddSong),
       },
       {
         id: 'logout',
@@ -34,9 +32,7 @@ const menuItems = [
         id: 'delete',
         label: 'Delete account',
         icon: <Trash2 size={16} />,
-        onClick: () => {
-          console.log('delete');
-        },
+        onClick: () => NiceModal.show(ConfirmDeleteAccount),
       },
     ],
   },
@@ -119,11 +115,7 @@ export const AppMenu = ({ src, alt }: { src: string; alt: string }) => (
               })}
             />
             {item.items.map((item) => (
-              <Menu.Item
-                className={menu}
-                id={item.id}
-                key={item.id}
-              >
+              <Menu.Item className={menu} id={item.id} key={item.id}>
                 <Menu.Item id={item.id}>{item.icon}</Menu.Item>
                 <Menu.Item id={item.id}>{item.label}</Menu.Item>
               </Menu.Item>
