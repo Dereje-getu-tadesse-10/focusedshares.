@@ -6,6 +6,7 @@ import { css } from '../../../styled-system/css';
 import { Switcher } from '../switcher/switcher';
 import { Button } from '../button/button';
 import Logo from '../../../public/icon.png';
+import Link from 'next/link';
 
 export const Navbar = () => {
   const { data: session } = useSession();
@@ -28,21 +29,9 @@ export const Navbar = () => {
           alignItems: 'center',
         })}
       >
-        <div>
-          <ul
-            className={css({
-              display: 'flex',
-              alignItems: 'center',
-              gap: '2',
-              color: 'var(--colors-text-muted)',
-              fontWeight: 'medium',
-            })}
-          >
-            <li>
-              <Image src={Logo} alt='FocusedShares' width={70} height={70} />
-            </li>
-          </ul>
-        </div>
+        <Link href='/'>
+          <Image src={Logo} alt='FocusedShares' width={70} height={70} />
+        </Link>
         <div
           className={css({
             display: 'flex',
