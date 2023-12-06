@@ -30,7 +30,16 @@ export const Navbar = () => {
         })}
       >
         <Link href='/'>
-          <Image src={Logo} alt='FocusedShares' width={70} height={70} />
+          <Image
+            src={Logo}
+            alt='FocusedShares'
+            className={css({
+              width: '70px',
+              height: '70px',
+            })}
+            width={40}
+            height={40}
+          />
         </Link>
         <div
           className={css({

@@ -20,7 +20,16 @@ export const Footer = () => {
         })}
       >
         <Link href='/'>
-          <Image src={Logo} alt='logo' width={72} height={16} />
+          <Image
+            src={Logo}
+            alt='logo'
+            className={css({
+              width: '70px',
+              height: '70px',
+            })}
+            width={40}
+            height={40}
+          />
         </Link>
       </div>
       <div
