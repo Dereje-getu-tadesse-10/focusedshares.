@@ -21,7 +21,9 @@ export const Footer = () => {
       >
         <Link href='/'>
           <Image
-            src={Logo}
+            src={
+              'https://res.cloudinary.com/ddugf28mx/image/upload/f_auto,q_auto/v1/focusedshares/d6xiwppm48jplmiks89p'
+            }
             alt='logo'
             className={css({
               width: '70px',
