@@ -45,10 +45,7 @@ export const YoutubeForm = () => {
             justifyContent: 'flex-end',
           })}
         >
-          <Button
-            type={'submit'}
-            disabled={!formState.isValid || formState.isSubmitting}
-          >
+          <Button type={'submit'} disabled={!formState.isValid}>
             Add song
           </Button>
         </div>
