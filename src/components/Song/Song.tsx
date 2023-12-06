@@ -2,6 +2,7 @@ import { truncate } from '@/src/lib/youtube';
 import { MinimalSong } from '@/src/server/youtubeSong';
 import { css } from '@/styled-system/css';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export const ContainerSongs = ({ songs }: { songs: MinimalSong[] }) => {
   return (
@@ -24,7 +25,8 @@ export const ContainerSongs = ({ songs }: { songs: MinimalSong[] }) => {
 
 export const Song = ({ song }: { song: MinimalSong }) => {
   return (
-    <div
+    <Link
+      href={`/song/${song.youtubeId}`}
       className={css({
         width: '100%',
       })}
@@ -62,6 +64,6 @@ export const Song = ({ song }: { song: MinimalSong }) => {
           {song.duration === '0:00' ? 'In live' : song.duration}{' '}
         </p>
       </div>
-    </div>
+    </Link>
   );
 };
