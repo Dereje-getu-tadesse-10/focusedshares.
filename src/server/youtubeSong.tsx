@@ -28,7 +28,7 @@ export const getSongs = async (limit?: number) => {
 export const getSong = async (id: string) => {
   const res: Song | null = await prisma.youtubeSong.findUnique({
     where: {
-      id,
+      youtubeId: id,
     },
   });
   return res;
