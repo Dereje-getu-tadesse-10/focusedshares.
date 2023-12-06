@@ -84,7 +84,22 @@ type AppMenuProps = {
 };
 
 export const AppMenu = ({ src, alt }: { src: string; alt: string }) => (
-  <Menu.Root>
+  <Menu.Root
+    onSelect={(id) => {
+      const selectedItem = menuItems.find((item) =>
+        item.items.some((subItem) => subItem.id === id.value)
+      );
+
+      if (selectedItem) {
+        const subItem = selectedItem.items.find(
+          (subItem) => subItem.id === id.value
+        );
+        if (subItem && subItem.onClick) {
+          subItem.onClick();
+        }
+      }
+    }}
+  >
     <Menu.Trigger>
       <ProfileAvatar src={src} alt={alt} />
     </Menu.Trigger>
@@ -108,7 +123,6 @@ export const AppMenu = ({ src, alt }: { src: string; alt: string }) => (
                 className={menu}
                 id={item.id}
                 key={item.id}
-                onClick={() => item.onClick()}
               >
                 <Menu.Item id={item.id}>{item.icon}</Menu.Item>
                 <Menu.Item id={item.id}>{item.label}</Menu.Item>
