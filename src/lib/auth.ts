@@ -36,10 +36,10 @@ export const {
       return session;
     },
   },
-  // pages: {
-  //   signIn: '/',
-  //   error: '/',
-  //   signOut: '/',
-  // },
+  pages: {
+    signIn: '/',
+    error: '/',
+    signOut: '/',
+  },
   debug: true,
 });
