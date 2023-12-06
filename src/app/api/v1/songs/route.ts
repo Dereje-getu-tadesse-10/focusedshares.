@@ -67,7 +67,7 @@ export const POST = async (request: Request) => {
         }
       );
     }
-    console.log(response.items[0].snippet.thumbnails);
+
     const data = {
       title: response.items[0].snippet.title,
       thumb: response.items[0].snippet.thumbnails.medium.url,
@@ -76,7 +76,7 @@ export const POST = async (request: Request) => {
       youtubeId: body.data.url,
       duration: formatDuration(response.items[0].contentDetails.duration),
     };
-    console.log(response.items[0].snippet);
+
     await prisma.youtubeSong.create({
       data: {
         category: category,
@@ -86,7 +86,6 @@ export const POST = async (request: Request) => {
         viewCount: data.viewCount,
         youtubeId: videoIdFromUrl,
         duration: data.duration,
-        description: data.desctiption,
       },
     });
 
