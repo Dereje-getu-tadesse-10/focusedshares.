@@ -11,6 +11,7 @@ export const ContainerSongs = ({ songs }: { songs: MinimalSong[] }) => {
         display: 'grid',
         mx: 4,
         gap: 7,
+        my: 7,
         sm: {
           gridTemplateColumns: 'repeat(auto-fill, minmax(290px, 1fr))',
         },
