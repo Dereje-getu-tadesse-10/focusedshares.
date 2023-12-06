@@ -10,7 +10,7 @@ export const ContainerSongs = ({ songs }: { songs: MinimalSong[] }) => {
       className={css({
         display: 'grid',
         mx: 4,
-        gap: 4,
+        gap: 7,
         sm: {
           gridTemplateColumns: 'repeat(auto-fill, minmax(290px, 1fr))',
         },
@@ -51,7 +51,7 @@ export const Song = ({ song }: { song: MinimalSong }) => {
         })}
       >
         <h3 className={css({ fontWeight: '550', color: 'var(--colors-text)' })}>
-          {truncate(song.title, 40)}
+          {truncate(song.title, 35)}
         </h3>
         <p
           className={css({

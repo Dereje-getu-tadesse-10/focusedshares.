@@ -12,7 +12,7 @@ export const Hero = () => {
         gap: '4',
         textAlign: 'center',
         maxWidth: '800px',
-        margin: '4rem auto',
+        margin: '6rem auto',
         padding: '0 1rem',
       })}
     >
