@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import { Providers } from './providers';
-import { Navbar } from '../stories/navbar/navbar';
+import { Navbar } from '@/src/components/Navbar/Navbar';
 import { Footer } from '../components/Footer/Footer';
 import Script from 'next/script';
 
