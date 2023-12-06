@@ -1,10 +1,10 @@
 import { Menu } from '@ark-ui/react';
 import { LogOut, Plus, Trash2 } from 'lucide-react';
-import { ProfileAvatar } from '../avatar/avatar';
-import { css } from '../../../styled-system/css';
+import { ProfileAvatar } from '@/src/stories/avatar/avatar';
+import { css } from '@/styled-system/css';
 import { signOut } from 'next-auth/react';
-import NiceModal from '@ebay/nice-modal-react';
 import { AddSong } from '@/src/components/Modals/AddSong';
+import NiceModal from '@ebay/nice-modal-react';
 
 const menuItems = [
   {

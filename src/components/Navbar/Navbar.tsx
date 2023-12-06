@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
 import { useSession, signIn } from 'next-auth/react';
-import { AppMenu } from '@/src/stories/menu/menu';
+import { AppMenu } from '@/src/components/Menu/Menu';
 import { css } from '@/styled-system/css';
 import { Switcher } from '@/src/stories/switcher/switcher';
 import { Button } from '@/src/stories/button/button';
