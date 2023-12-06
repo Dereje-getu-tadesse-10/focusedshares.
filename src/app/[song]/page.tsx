@@ -3,10 +3,10 @@ import type { Metadata, ResolvingMetadata } from 'next';
 import { getSong } from '@/src/server/youtubeSong';
 
 export async function generateMetadata(
-  { params }: { params: { id: string } },
+  { params }: { params: { song: string } },
   parent: ResolvingMetadata
 ): Promise<Metadata> {
-  const id = params.id;
+  const id = params.song;
 
   const song = await getSong(id);
 
@@ -24,4 +24,20 @@ export async function generateMetadata(
     description: `${song.channelTitle} - ${song.title}`,
     metadataBase: new URL('https://www.focusedshares.com/'),
   };
+}
+
+export default async function SongPage({
+  params,
+}: {
+  params: { song: string };
+}) {
+  const id = params.song;
+
+  const song = await getSong(id);
+
+  if (!song) {
+    notFound();
+  }
+
+  return <div>{song.title}</div>;
 }
