@@ -56,7 +56,7 @@ export default defineConfig({
         },
         background: {
           value: {
-            _light: '{colors.zinc.100}',
+            _light: '#fff',
             _dark: '{colors.zinc.900}',
           },
         },

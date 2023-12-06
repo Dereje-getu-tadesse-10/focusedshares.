@@ -428,7 +428,7 @@
   --colors-error: var(--colors-red-900);
   --colors-input-focus: var(--colors-zinc-200);
   --colors-text-muted: var(--colors-zinc-900);
-  --colors-background: var(--colors-zinc-100);
+  --colors-background: #fff;
   --colors-backdrop: rgba(255, 255, 255, 0.5)
 }
 
