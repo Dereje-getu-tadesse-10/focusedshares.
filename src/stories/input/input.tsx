@@ -27,7 +27,7 @@ const label = css({
   marginBottom: '.3rem',
 });
 
-export type InputProps = InputHTMLAttributes<HTMLInputElement> & {
+type InputProps = InputHTMLAttributes<HTMLInputElement> & {
   label: string;
   labelFor: string;
 };

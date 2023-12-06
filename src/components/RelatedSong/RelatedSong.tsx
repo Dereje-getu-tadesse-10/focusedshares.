@@ -11,7 +11,8 @@ export const RelatedSong = ({ song }: { song: MinimalSong[] }) => (
     })}
   >
     {song.map((song) => (
-      <Song song={song} />
+      <Song key={song.title} song={song} />
     ))}
   </div>
 );
+

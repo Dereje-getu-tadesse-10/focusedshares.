@@ -3,7 +3,7 @@ import { PrismaAdapter } from '@auth/prisma-adapter';
 import Google from 'next-auth/providers/google';
 import { prisma } from './prisma';
 
-export const adapter = PrismaAdapter(prisma);
+const adapter = PrismaAdapter(prisma);
 
 const { NEXT_PUBLIC_GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET, NEXTAUTH_SECRET } =
   process.env;
