@@ -9,7 +9,8 @@ export const Footer = () => {
     <footer
       className={css({
         p: '1rem',
-        mt: '10',
+        mt: '3rem',
+        mb: '1rem',
       })}
     >
       <div
