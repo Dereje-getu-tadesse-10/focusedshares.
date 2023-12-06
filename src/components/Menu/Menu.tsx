@@ -105,7 +105,8 @@ export const AppMenu = ({ src, alt }: { src: string; alt: string }) => (
                 className={menu}
                 id={item.id}
                 key={item.id}
-                onClick={item.onClick}
+                // onClick={item.onClick}
+                onSelect={item.onClick}
               >
                 <Menu.Item id={item.id}>{item.icon}</Menu.Item>
                 <Menu.Item id={item.id}>{item.label}</Menu.Item>
