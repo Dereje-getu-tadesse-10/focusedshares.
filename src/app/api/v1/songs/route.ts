@@ -67,9 +67,10 @@ export const POST = async (request: Request) => {
         }
       );
     }
+    console.log(response.items[0].snippet.thumbnails);
     const data = {
       title: response.items[0].snippet.title,
-      thumb: response.items[0].snippet.thumbnails.high.url,
+      thumb: response.items[0].snippet.thumbnails.medium.url,
       channelTitle: response.items[0].snippet.channelTitle,
       viewCount: response.items[0].statistics.viewCount,
       youtubeId: body.data.url,

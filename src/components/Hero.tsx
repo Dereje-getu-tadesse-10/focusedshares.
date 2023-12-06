@@ -39,7 +39,7 @@ export const Hero = () => {
         rain sounds. Share your favorite YouTube videos in our diverse musical
         community.
       </p>
-      <Link className={button({ visual: 'solid' })} href={'/#songs'}>
+      <Link className={button({ visual: 'solid' })} href={'/songs'}>
         Discover now
       </Link>
     </section>

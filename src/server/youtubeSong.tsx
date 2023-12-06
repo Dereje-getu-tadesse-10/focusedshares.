@@ -1,7 +1,15 @@
+import { YoutubeSong } from '@prisma/client';
 import { prisma } from '@/src/lib/prisma';
 
+export type Song = YoutubeSong;
+
+export type MinimalSong = Pick<
+  Song,
+  'title' | 'thumb' | 'youtubeId' | 'category' | 'duration'
+>;
+
 export const getSongs = async (limit?: number) => {
-  const res = await prisma.youtubeSong.findMany({
+  const res: MinimalSong[] = await prisma.youtubeSong.findMany({
     take: limit ? limit : undefined,
     orderBy: {
       title: 'desc',
@@ -11,6 +19,7 @@ export const getSongs = async (limit?: number) => {
       thumb: true,
       youtubeId: true,
       category: true,
+      duration: true,
     },
   });
   return res;

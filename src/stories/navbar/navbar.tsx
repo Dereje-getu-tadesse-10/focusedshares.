@@ -1,5 +1,4 @@
 'use client';
-import Link from 'next/link';
 import Image from 'next/image';
 import { useSession, signIn } from 'next-auth/react';
 import { AppMenu } from '../menu/menu';
@@ -41,9 +40,6 @@ export const Navbar = () => {
           >
             <li>
               <Image src={Logo} alt='FocusedShares' width={70} height={70} />
-            </li>
-            <li>
-              <Link href={'/songs'}>Songs</Link>
             </li>
           </ul>
         </div>
