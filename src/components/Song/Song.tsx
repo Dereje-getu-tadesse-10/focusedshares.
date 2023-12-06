@@ -26,7 +26,7 @@ export const ContainerSongs = ({ songs }: { songs: MinimalSong[] }) => {
 export const Song = ({ song }: { song: MinimalSong }) => {
   return (
     <Link
-      href={`/song/${song.youtubeId}`}
+      href={`/${song.youtubeId}`}
       className={css({
         width: '100%',
       })}
