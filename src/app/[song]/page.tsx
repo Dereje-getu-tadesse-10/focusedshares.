@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import type { Metadata, ResolvingMetadata } from 'next';
 import { getSong } from '@/src/server/youtubeSong';
 import { css } from '@/styled-system/css';
+import { YoutubeEmbed } from '@/src/components/YoutubeEmbed/YoutubeEmbed';
 
 export async function generateMetadata(
   { params }: { params: { song: string } },
@@ -45,6 +46,8 @@ export default async function SongPage({
       className={css({
         mx: '1rem',
       })}
-    ></main>
+    >
+      <YoutubeEmbed id={id} title={song.title} />
+    </main>
   );
 }

@@ -10,6 +10,12 @@
   transition: 0.8s ease-in-out;
 }
 
+.yt-lite {
+  aspect-ratio: 16 / 9;
+  border-radius: 16px;
+  z-index: 0;
+}
+
 .terms {
   max-width: 1200px;
   margin: 2rem auto;
