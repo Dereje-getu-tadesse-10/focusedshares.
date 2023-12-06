@@ -77,6 +77,7 @@ export const POST = async (request: Request) => {
       duration: formatDuration(response.items[0].contentDetails.duration),
       desctiption: response.items[0].snippet.description,
     };
+    console.log(response.items[0].snippet);
     await prisma.youtubeSong.create({
       data: {
         category: category,

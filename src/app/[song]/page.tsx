@@ -1,8 +1,9 @@
 import { notFound } from 'next/navigation';
 import type { Metadata, ResolvingMetadata } from 'next';
-import { getSong } from '@/src/server/youtubeSong';
+import { getSong, getSongs } from '@/src/server/youtubeSong';
 import { css } from '@/styled-system/css';
 import { YoutubeEmbed } from '@/src/components/YoutubeEmbed/YoutubeEmbed';
+import { WrapperSong } from '@/src/components/WrapperSong/WrapperSong';
 
 export async function generateMetadata(
   { params }: { params: { song: string } },
@@ -35,19 +36,25 @@ export default async function SongPage({
 }) {
   const id = params.song;
 
-  const song = await getSong(id);
+  const songData = await getSong(id);
+  const songsData = await getSongs(5);
+
+  const [song, songs] = await Promise.all([songData, songsData]);
 
   if (!song) {
     notFound();
   }
 
+  console.log(songs, 'hello');
   return (
     <main
       className={css({
         mx: '1rem',
       })}
     >
-      <YoutubeEmbed id={id} title={song.title} />
+      <WrapperSong>
+        <YoutubeEmbed id={id} title={song.title} song={song} />
+      </WrapperSong>
     </main>
   );
 }
