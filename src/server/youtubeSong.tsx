@@ -21,6 +21,7 @@ export const getSongs = async (limit?: number) => {
       category: true,
       duration: true,
     },
+    
   });
   return res;
 };
