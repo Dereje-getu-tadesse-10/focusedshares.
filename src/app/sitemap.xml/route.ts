@@ -21,7 +21,7 @@ function generateSiteMap(songs: MinimalSong[]) {
        .map(({ youtubeId }) => {
          return `
            <url>
-               <loc>${URL}${`${youtubeId}`}</loc>
+               <loc>${URL}/${`${youtubeId}`}</loc>
            </url>
          `;
        })
