@@ -6,7 +6,7 @@ export const runtime = 'edge';
 export const revalidate = 0;
 
 export default async function Home() {
-  const songs: MinimalSong[] = await getSongs(10);
+  const songs: MinimalSong[] = await getSongs(9);
   console.log(songs);
   return (
     <main>
