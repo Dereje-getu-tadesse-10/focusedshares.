@@ -72,7 +72,7 @@ export default defineConfig({
   outdir: 'styled-system',
   globalCss: defineGlobalStyles({
     body: {
-      bg: 'background',
+      bg: 'var(--colors-background)',
       maxWidth: '1200px',
       mx: 'auto',
     },

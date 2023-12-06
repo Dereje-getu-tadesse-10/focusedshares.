@@ -12,7 +12,7 @@ export const Providers = ({ children }: { children: React.ReactNode }) => {
   return (
     <SessionProvider>
       <QueryClientProvider client={client}>
-        <ThemeProvider>
+        <ThemeProvider defaultTheme='dark'>
           <NiceModal.Provider>{children}</NiceModal.Provider>
         </ThemeProvider>
       </QueryClientProvider>
