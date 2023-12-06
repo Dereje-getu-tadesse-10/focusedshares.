@@ -21,6 +21,7 @@
     "@storybook/manager-api": "^7.6.3",
     "@storybook/theming": "^7.6.3",
     "@tanstack/react-query": "^5.12.2",
+    "@tanstack/react-query-next-experimental": "^5.12.2",
     "lucide-react": "^0.294.0",
     "next": "14.0.3",
     "next-auth": "5.0.0-beta.4",
