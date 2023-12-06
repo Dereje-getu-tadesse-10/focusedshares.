@@ -14,7 +14,10 @@ const menuItems = [
         id: 'song',
         label: 'Add new song',
         icon: <Plus size={16} />,
-        onClick: () => NiceModal.show(AddSong),
+        onClick: () => {
+          console.log('add song');
+          NiceModal.show(AddSong);
+        },
       },
       {
         id: 'logout',
@@ -105,8 +108,7 @@ export const AppMenu = ({ src, alt }: { src: string; alt: string }) => (
                 className={menu}
                 id={item.id}
                 key={item.id}
-                // onClick={item.onClick}
-                onSelect={item.onClick}
+                onClick={() => item.onClick()}
               >
                 <Menu.Item id={item.id}>{item.icon}</Menu.Item>
                 <Menu.Item id={item.id}>{item.label}</Menu.Item>
