@@ -1,11 +1,10 @@
 'use client';
 import Image from 'next/image';
 import { useSession, signIn } from 'next-auth/react';
-import { AppMenu } from '../menu/menu';
-import { css } from '../../../styled-system/css';
-import { Switcher } from '../switcher/switcher';
-import { Button } from '../button/button';
-import Logo from '../../../public/icon.png';
+import { AppMenu } from '@/src/stories/menu/menu';
+import { css } from '@/styled-system/css';
+import { Switcher } from '@/src/stories/switcher/switcher';
+import { Button } from '@/src/stories/button/button';
 import Link from 'next/link';
 
 export const Navbar = () => {
