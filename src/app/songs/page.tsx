@@ -1,7 +1,14 @@
 import { Metadata } from 'next';
-import { ContainerSongs } from '@/src/components/Song/Song';
+// import { ContainerSongs } from '@/src/components/Song/Song';
 import { getSongs } from '@/src/server/youtubeSong';
 import { css } from '@/styled-system/css';
+
+import dynamic from 'next/dynamic';
+
+const ContainerSongs = dynamic(() => import('../../components/Song/Song'), {
+  loading: () => <p>Loading...</p>,
+  ssr: false,
+});
 
 export const runtime = 'edge';
 
