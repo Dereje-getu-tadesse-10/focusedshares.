@@ -3,6 +3,8 @@ import { ContainerSongs } from '@/src/components/Song/Song';
 import { getSongs } from '@/src/server/youtubeSong';
 import { css } from '@/styled-system/css';
 
+export const runtime = 'edge';
+
 export const metadata: Metadata = {
   title: 'Songs',
   description: 'A collection of songs to help you focus on your work.',

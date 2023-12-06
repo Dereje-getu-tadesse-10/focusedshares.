@@ -4,6 +4,8 @@ import { formatDuration, videoId } from '@/src/lib/youtube';
 import { getSongYt } from '@/src/lib/youtube';
 import { auth } from '@/src/lib/auth';
 
+export const runtime = 'edge';
+
 const requestSchema = z.object({
   url: z.string().url(),
   category: z.enum([

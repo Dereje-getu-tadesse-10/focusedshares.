@@ -1,6 +1,8 @@
 import { auth } from '@/src/lib/auth';
 import { prisma } from '@/src/lib/prisma';
 
+export const runtime = 'edge';
+
 export const DELETE = async (request: Request) => {
   const session = await auth();
 

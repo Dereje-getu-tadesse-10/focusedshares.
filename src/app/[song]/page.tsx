@@ -6,6 +6,8 @@ import { YoutubeEmbed } from '@/src/components/YoutubeEmbed/YoutubeEmbed';
 import { WrapperSong } from '@/src/components/WrapperSong/WrapperSong';
 import { RelatedSong } from '@/src/components/RelatedSong/RelatedSong';
 
+export const runtime = 'edge';
+
 export async function generateMetadata(
   { params }: { params: { song: string } },
   parent: ResolvingMetadata
