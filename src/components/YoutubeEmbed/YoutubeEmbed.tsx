@@ -1,7 +1,7 @@
 'use client';
-import LiteYouTubeEmbed from 'react-lite-youtube-embed';
 import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css';
-import { SongInfo } from '../SongInfo/SongInfo';
+import LiteYouTubeEmbed from 'react-lite-youtube-embed';
+import { SongInfo } from '@/src/components/SongInfo/SongInfo';
 import { Song } from '@/src/server/youtubeSong';
 
 export const YoutubeEmbed = ({

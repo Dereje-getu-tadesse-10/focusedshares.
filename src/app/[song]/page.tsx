@@ -50,11 +50,7 @@ export default async function SongPage({
 
   console.log(songs, 'hello');
   return (
-    <main
-      className={css({
-        mx: '1rem',
-      })}
-    >
+    <main className={css({mx: '1rem'})}>
       <WrapperSong>
         <YoutubeEmbed id={id} title={song.title} song={song} />
         <RelatedSong song={songs} />
