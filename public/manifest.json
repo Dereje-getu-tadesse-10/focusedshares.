@@ -5,14 +5,14 @@
     {
       "purpose": "maskable",
       "sizes": "512x512",
-      "src": "icon512.png",
+      "src": "https://res.cloudinary.com/ddugf28mx/image/upload/v1701872796/focusedshares/d6xiwppm48jplmiks89p.png",
       "type": "image/png"
     },
     {
       "purpose": "any",
       "sizes": "512x512",
       "src": "icon512_rounded.png",
-      "type": "image/png"
+      "type": "https://res.cloudinary.com/ddugf28mx/image/upload/v1701872796/focusedshares/d6xiwppm48jplmiks89p.png"
     }
   ],
   "orientation": "portrait",
