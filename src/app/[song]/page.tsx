@@ -1,7 +1,7 @@
-import { notFound } from 'next/navigation';
 import type { Metadata, ResolvingMetadata } from 'next';
-import { getSong, getSongs } from '@/src/server/youtubeSong';
+import { notFound } from 'next/navigation';
 import { css } from '@/styled-system/css';
+import { getSong, getSongs } from '@/src/server/youtubeSong';
 import { YoutubeEmbed } from '@/src/components/YoutubeEmbed/YoutubeEmbed';
 import { WrapperSong } from '@/src/components/WrapperSong/WrapperSong';
 import { RelatedSong } from '@/src/components/RelatedSong/RelatedSong';
@@ -48,7 +48,6 @@ export default async function SongPage({
     notFound();
   }
 
-  console.log(songs, 'hello');
   return (
     <main className={css({mx: '1rem'})}>
       <WrapperSong>
