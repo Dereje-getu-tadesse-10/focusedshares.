@@ -1,4 +1,4 @@
-import { Hero } from '../components/Hero/Hero';
+import { Hero } from '@/src/components/Heros/Hero';
 import { ContainerSongs } from '../components/Song/Song';
 import { MinimalSong, getSongs } from '../server/youtubeSong';
 
