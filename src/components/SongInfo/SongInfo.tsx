@@ -1,7 +1,6 @@
 import { formatNumber, truncate } from '@/src/lib/youtube';
 import { Song } from '@/src/server/youtube.server';
 import { css } from '@/styled-system/css';
-import { ThumbsUp } from 'lucide-react';
 import Link from 'next/link';
 
 export const SongInfo = ({ song }: { song: Song }) => {
@@ -24,13 +23,31 @@ export const SongInfo = ({ song }: { song: Song }) => {
       >
         {song.channelTitle}
       </Link>
-
-      <div>
-          <ThumbsUp
-            className={css({ color: 'var(--colors-text-muted)' })}
-            size={'16'}
-          />
+      <div
+        className={css({
+          fontSize: 'sm',
+          fontWeight: '500',
+          color: 'var(--colors-text-muted)',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '1',
+        })}
+      >
+        <p>
+          {song.category} •{' '}
+          {song.duration === '0:00' ? 'In live' : song.duration}{' '}
+        </p>
+        • <p>{formatNumber(song.viewCount)} views</p>
       </div>
+      <p
+        className={css({
+          fontSize: 'sm',
+          fontWeight: '500',
+          color: 'var(--colors-text-muted)',
+        })}
+      >
+        The number of views is not synchronized in real time with YouTube.
+      </p>
     </div>
   );
 };
