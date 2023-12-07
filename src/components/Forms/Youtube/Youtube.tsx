@@ -35,8 +35,21 @@ export const YoutubeForm = () => {
         />
       </div>
       <div className={css({ mt: '3' })}>
+        <label
+          htmlFor='category'
+          className={css({
+            color: 'var(--colors-text-muted)',
+            display: 'block',
+            fontSize: '14px',
+            fontWeight: 'normal',
+            marginBottom: '.3rem',
+          })}
+        >
+          Category
+        </label>
         <select
           name={'category'}
+          id='category'
           className={css({
             border: '1px solid var(--colors-input-focus)',
             rounded: 'sm',
