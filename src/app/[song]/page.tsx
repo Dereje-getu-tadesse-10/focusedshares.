@@ -1,7 +1,7 @@
 import type { Metadata, ResolvingMetadata } from 'next';
 import { notFound } from 'next/navigation';
 import { css } from '@/styled-system/css';
-import { getSong, getSongs } from '@/src/server/youtubeSong';
+import { getSong, getSongs } from '@/src/server/youtube.server';
 import { YoutubeEmbed } from '@/src/components/YoutubeEmbed/YoutubeEmbed';
 import { WrapperSong } from '@/src/components/WrapperSong/WrapperSong';
 import { RelatedSong } from '@/src/components/RelatedSong/RelatedSong';

@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { ContainerSongs } from '@/src/components/Song/Song';
-import { getSongs } from '@/src/server/youtubeSong';
+import { getSongs } from '@/src/server/youtube.server';
 import { css } from '@/styled-system/css';
 import { SongHero } from '@/src/components/Heros/SongHero';
 

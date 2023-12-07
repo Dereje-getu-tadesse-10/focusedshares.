@@ -71,10 +71,11 @@ export const GenreSelect = ({
 }) => {
   return (
     <Select.Root
-      id={'genre'}
+      id={'category'}
       value={[value]}
       onValueChange={(e) => onChange(e.value[0])}
       items={GENRES}
+      name={'category'}
     >
       <Select.Label className={label} id={'genre'}>
         Genres

@@ -1,4 +1,4 @@
-import { MinimalSong } from '@/src/server/youtubeSong';
+import { MinimalSong } from '@/src/server/youtube.server';
 import { Song } from '../Song/Song';
 import { css } from '@/styled-system/css';
 

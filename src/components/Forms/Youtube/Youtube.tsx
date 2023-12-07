@@ -1,43 +1,69 @@
-import { useYoutubeForm } from './useYoutube';
 import { css } from '@/styled-system/css';
-import { Controller } from 'react-hook-form';
-
 import { Button } from '@/src/stories/button/button';
-import { GenreSelect } from '@/src/components/GenresSelect/GenresSelect';
 import { Input } from '@/src/stories/input/input';
+import { addSong } from '@/src/server/song.server';
+import { GENRES } from '@/src/components/Forms/Youtube/genres';
+import toast from 'react-hot-toast';
+import { useModal } from '@ebay/nice-modal-react';
 
 export const YoutubeForm = () => {
-  const { handleSubmit, onSubmit, formState, control } = useYoutubeForm();
+  const modal = useModal();
+
+  const createSong = async (formData: FormData) => {
+    const res = await addSong(formData);
+    console.log(res.data?.success);
+    if (res.data?.success) {
+      modal.hide();
+      toast.success('Song added successfully!');
+    } else {
+      toast.error(res?.data?.message || 'An error occurred');
+    }
+  };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form action={createSong}>
       <div
         className={css({
           mt: '1rem',
         })}
       >
-        <Controller
-          name='url'
-          control={control}
-          render={({ field: { onChange, value } }) => (
-            <Input
-              placeholder='https://www.youtube.com/watch?v=jfKfPfyJRdk'
-              label='Youtube url'
-              labelFor='url'
-              value={value}
-              onChange={onChange}
-            />
-          )}
+        <Input
+          placeholder='https://www.youtube.com/watch?v=jfKfPfyJRdk'
+          label='Youtube url'
+          labelFor='url'
+          name={'url'}
         />
       </div>
       <div className={css({ mt: '3' })}>
-        <Controller
-          name='category'
-          control={control}
-          render={({ field: { onChange, value } }) => (
-            <GenreSelect value={value} onChange={onChange} />
-          )}
-        />
+        <select
+          name={'category'}
+          className={css({
+            border: '1px solid var(--colors-input-focus)',
+            rounded: 'sm',
+            padding: '.5rem',
+            bg: 'var(--colors-background)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            width: '100%',
+            cursor: 'pointer',
+            color: 'var(--colors-text-muted)',
+            WebkitAppearance: 'none',
+            '&:focus': {
+              outline: '2px solid var(--colors-input-focus)',
+            },
+            '&:active': {
+              outline: '2px solid var(--colors-input-focus)',
+            },
+          })}
+        >
+          {GENRES.map((item) => (
+            <option key={item.id} value={item.id}>
+              {item.id}
+            </option>
+          ))}
+          ;
+        </select>
         <div
           className={css({
             mt: '5',
@@ -45,9 +71,7 @@ export const YoutubeForm = () => {
             justifyContent: 'flex-end',
           })}
         >
-          <Button type={'submit'} disabled={!formState.isValid}>
-            Add song
-          </Button>
+          <Button type={'submit'}>Add song</Button>
         </div>
       </div>
     </form>

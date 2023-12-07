@@ -1,5 +1,5 @@
 import { truncate } from '@/src/lib/youtube';
-import { MinimalSong } from '@/src/server/youtubeSong';
+import { MinimalSong } from '@/src/server/youtube.server';
 import { css } from '@/styled-system/css';
 import Image from 'next/image';
 import Link from 'next/link';

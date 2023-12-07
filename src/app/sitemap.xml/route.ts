@@ -1,4 +1,4 @@
-import { MinimalSong, getSongs } from '@/src/server/youtubeSong';
+import { MinimalSong, getSongs } from '@/src/server/youtube.server';
 
 const URL = 'https://focusedshares.com';
 
