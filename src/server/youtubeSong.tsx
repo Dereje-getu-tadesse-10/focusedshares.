@@ -12,7 +12,7 @@ export const getSongs = async (limit?: number) => {
   const res: MinimalSong[] = await prisma.youtubeSong.findMany({
     take: limit ? limit : undefined,
     orderBy: {
-      title: 'desc',
+      localViews: 'desc',
     },
     select: {
       title: true,
