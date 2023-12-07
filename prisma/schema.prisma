@@ -1,13 +1,10 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
-  provider = "cockroachdb"
-  url      = env("DATABASE_URL")
+  provider  = "cockroachdb"
+  url       = env("DATABASE_URL")
   directUrl = env("DIRECT_URL")
 }
 
@@ -24,8 +21,7 @@ model Account {
   scope             String?
   id_token          String?
   session_state     String?
-
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)  
+  user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([provider, providerAccountId])
 }
@@ -39,10 +35,10 @@ model Session {
 }
 
 model User {
-  id            String         @id @default(cuid())
+  id            String    @id @default(cuid())
   name          String?
   description   String?
-  email         String?        @unique
+  email         String?   @unique
   emailVerified DateTime?
   image         String?
   accounts      Account[]
@@ -57,6 +53,18 @@ model VerificationToken {
   @@unique([identifier, token])
 }
 
+model YoutubeSong {
+  id           String   @id @default(cuid())
+  title        String
+  thumb        String
+  channelTitle String
+  viewCount    String
+  category     Category
+  youtubeId    String   @unique
+  duration     String
+  localViews   Int?     @default(0)
+}
+
 enum Category {
   KPOP
   JAZZ
@@ -65,16 +73,4 @@ enum Category {
   AMBIENT
   ELECTRONIC
   OTHER
-}
-
-model YoutubeSong {
-  id            String       @id @default(cuid())
-  title         String
-  thumb         String
-  channelTitle  String
-  viewCount     String
-  category      Category
-  youtubeId     String
-  duration      String
-  @@unique([youtubeId])
 }
