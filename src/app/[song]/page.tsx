@@ -5,6 +5,7 @@ import { getSong, getSongs } from '@/src/server/youtubeSong';
 import { YoutubeEmbed } from '@/src/components/YoutubeEmbed/YoutubeEmbed';
 import { WrapperSong } from '@/src/components/WrapperSong/WrapperSong';
 import { RelatedSong } from '@/src/components/RelatedSong/RelatedSong';
+import {prisma} from "@/src/lib/prisma";
 
 export const runtime = 'edge';
 
@@ -47,6 +48,15 @@ export default async function SongPage({
   if (!song) {
     notFound();
   }
+
+  await prisma.youtubeSong.update({
+    where: {
+      youtubeId: song.youtubeId
+    },
+    data: {
+      localViews: song.localViews + 1
+    },
+  });
 
   return (
     <main className={css({mx: '1rem'})}>
