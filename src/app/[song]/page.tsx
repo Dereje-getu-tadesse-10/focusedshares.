@@ -54,7 +54,7 @@ export default async function SongPage({
       youtubeId: song.youtubeId
     },
     data: {
-      localViews: song.localViews + 1
+      localViews: + 1
     },
   });
 
