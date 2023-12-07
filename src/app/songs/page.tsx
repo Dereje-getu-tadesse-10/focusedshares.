@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { ContainerSongs } from '@/src/components/Song/Song';
 import { getSongs } from '@/src/server/youtubeSong';
 import { css } from '@/styled-system/css';
-import {SongHero} from "@/src/components/Heros/SongHero";
+import { SongHero } from "@/src/components/Heros/SongHero";
 
 
 export const runtime = 'edge';
