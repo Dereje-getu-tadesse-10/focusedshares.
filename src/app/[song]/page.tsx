@@ -5,7 +5,7 @@ import { getSong, getSongs } from '@/src/server/youtubeSong';
 import { YoutubeEmbed } from '@/src/components/YoutubeEmbed/YoutubeEmbed';
 import { WrapperSong } from '@/src/components/WrapperSong/WrapperSong';
 import { RelatedSong } from '@/src/components/RelatedSong/RelatedSong';
-import {prisma} from "@/src/lib/prisma";
+import { prisma } from '@/src/lib/prisma';
 
 export const runtime = 'edge';
 
@@ -51,15 +51,15 @@ export default async function SongPage({
 
   await prisma.youtubeSong.update({
     where: {
-      youtubeId: song.youtubeId
+      youtubeId: song.youtubeId,
     },
     data: {
-      localViews: + 1
+      localViews: +1,
     },
   });
 
   return (
-    <main className={css({mx: '1rem'})}>
+    <main className={css({ mx: '1rem' })}>
       <WrapperSong>
         <YoutubeEmbed id={id} title={song.title} song={song} />
         <RelatedSong song={songs} />
