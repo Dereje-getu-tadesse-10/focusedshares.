@@ -36,6 +36,10 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# PandaCss
 /styled-system
 
+# Prisma migration files
 /prisma/migrations
+
+
