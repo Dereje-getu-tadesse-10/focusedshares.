@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import { css } from '@/styled-system/css';
 import { getSong, getSongs } from '@/src/server/youtube.server';
 import { YoutubeEmbed } from '@/src/components/YoutubeEmbed/YoutubeEmbed';
-import { WrapperSong } from '@/src/components/WrapperSong/WrapperSong';
+import { GridWrapper } from '@/src/components/GridWrapper/GridWrapper';
 import { RelatedSong } from '@/src/components/RelatedSong/RelatedSong';
 import { prisma } from '@/src/lib/prisma';
 
@@ -66,10 +66,10 @@ export default async function SongPage({
 
   return (
     <main className={css({ mx: '1rem' })}>
-      <WrapperSong>
+      <GridWrapper>
         <YoutubeEmbed id={id} title={song.title} song={song} />
         <RelatedSong song={songs} />
-      </WrapperSong>
+      </GridWrapper>
     </main>
   );
 }

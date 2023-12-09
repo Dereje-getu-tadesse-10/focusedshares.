@@ -1,6 +1,6 @@
 import { css } from '@/styled-system/css';
 
-export const WrapperSong = ({ children }: { children: React.ReactNode }) => {
+export const GridWrapper = ({ children }: { children: React.ReactNode }) => {
   return (
     <div
       className={css({
