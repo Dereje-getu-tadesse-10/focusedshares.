@@ -8,6 +8,7 @@ import { RelatedSong } from '@/src/components/RelatedSong/RelatedSong';
 import { prisma } from '@/src/lib/prisma';
 
 export const runtime = 'edge';
+
 export const revalidate = 0;
 
 export async function generateMetadata(
