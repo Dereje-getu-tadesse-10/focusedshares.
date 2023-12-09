@@ -8,6 +8,7 @@ import { RelatedSong } from '@/src/components/RelatedSong/RelatedSong';
 import { prisma } from '@/src/lib/prisma';
 
 export const runtime = 'edge';
+export const revalidate = 0;
 
 export async function generateMetadata(
   { params }: { params: { song: string } },
@@ -54,9 +55,13 @@ export default async function SongPage({
       youtubeId: song.youtubeId,
     },
     data: {
-      localViews: +1,
+      localViews: {
+        increment: 1,
+      },
     },
   });
+
+  console.log(song);
 
   return (
     <main className={css({ mx: '1rem' })}>

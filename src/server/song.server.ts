@@ -12,7 +12,6 @@ import {
 import { GENRES } from '@/src/components/Forms/Youtube/genres';
 import { prisma } from '../lib/prisma';
 import { Category } from '@prisma/client';
-import { revalidatePath } from 'next/cache';
 
 export const action = createSafeActionClient();
 
@@ -88,3 +87,4 @@ export const addSong = action(FormSchema, async ({ url, category }) => {
     message: 'Song added successfully!',
   };
 });
+

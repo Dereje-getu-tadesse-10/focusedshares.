@@ -1,7 +1,7 @@
-import { YoutubeSong } from '@prisma/client';
+import { YoutubeSong, Like } from '@prisma/client';
 import { prisma } from '@/src/lib/prisma';
 
-export type Song = YoutubeSong;
+export type Song = YoutubeSong
 
 export type MinimalSong = Pick<
   Song,
@@ -20,7 +20,7 @@ export const getSongs = async (limit?: number) => {
       youtubeId: true,
       category: true,
       duration: true,
-    },
+    }
   });
   return res;
 };
@@ -28,7 +28,7 @@ export const getSongs = async (limit?: number) => {
 export const getSong = async (id: string) => {
   const res: Song | null = await prisma.youtubeSong.findUnique({
     where: {
-      youtubeId: id,
+      youtubeId: id
     },
   });
   return res;
