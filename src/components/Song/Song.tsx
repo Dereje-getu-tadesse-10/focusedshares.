@@ -1,10 +1,18 @@
 import { truncate } from '@/src/lib/youtube';
 import { MinimalSong } from '@/src/server/youtube.server';
 import { css } from '@/styled-system/css';
+import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import Link from 'next/link';
 
-export const ContainerSongs = ({ songs }: { songs: MinimalSong[] }) => {
+export const ContainerSongs = ({
+  songs,
+  lang,
+}: {
+  songs: MinimalSong[];
+  lang: string;
+}) => {
+  const t = useTranslations('InLive');
   return (
     <section
       className={css({
@@ -18,13 +26,19 @@ export const ContainerSongs = ({ songs }: { songs: MinimalSong[] }) => {
       })}
     >
       {songs.map((song) => (
-        <Song key={song.youtubeId} song={song} />
+        <Song key={song.youtubeId} song={song} inLive={t('text')} />
       ))}
     </section>
   );
 };
 
-export const Song = ({ song }: { song: MinimalSong }) => {
+export const Song = ({
+  song,
+  inLive,
+}: {
+  song: MinimalSong;
+  inLive: string;
+}) => {
   return (
     <Link
       href={`/${song.youtubeId}`}
@@ -61,8 +75,7 @@ export const Song = ({ song }: { song: MinimalSong }) => {
             color: 'var(--colors-text-muted)',
           })}
         >
-          {song.category} •{' '}
-          {song.duration === '0:00' ? 'In live' : song.duration}{' '}
+          {song.category} • {song.duration === '0:00' ? inLive : song.duration}{' '}
         </p>
       </div>
     </Link>

@@ -1,7 +1,11 @@
 import Link from 'next/link';
 import { button } from '@/src/stories/button/button';
 import { css } from '@/styled-system/css';
-export const Hero = () => {
+import { useTranslations } from 'next-intl';
+
+export const Hero = ({ lang }: { lang: string }) => {
+  const t = useTranslations('Home');
+
   return (
     <section
       className={css({
@@ -26,7 +30,7 @@ export const Hero = () => {
           },
         })}
       >
-        Elevate Your Focus with Focus Song
+        {t('title')}
       </h1>
       <p
         className={css({
@@ -35,12 +39,10 @@ export const Hero = () => {
           color: 'var(--colors-text-muted)',
         })}
       >
-        Discover a world combining focus and music, featuring lo-fi hip hop to
-        rain sounds. Share your favorite YouTube videos in our diverse musical
-        community.
+        {t('description')}
       </p>
-      <Link className={button({ visual: 'solid' })} href={'/songs'}>
-        Discover now
+      <Link className={button({ visual: 'solid' })} href={`${lang}/songs`}>
+        {t('cta')}
       </Link>
     </section>
   );

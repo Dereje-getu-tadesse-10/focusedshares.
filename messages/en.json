@@ -1,0 +1,22 @@
+{
+  "Metadata": {
+    "title": "Focused Shares",
+    "description": "Discover a world combining focus and music, featuring lo-fi hip hop to rain sounds. Share your favorite YouTube videos in our diverse musical community."
+  },
+  "Home": {
+    "title": "Elevate your focus with Focus Song",
+    "description": "Discover a world combining focus and music, featuring lo-fi hip hop to rain sounds. Share your favorite YouTube videos in our diverse musical community.",
+    "cta": "Discover Focus Song"
+  },
+  "InLive": {
+    "text": "In Live"
+  },
+  "Menu": {
+    "account": "My account",
+    "signIn": "Sign In",
+    "signOut": "Logout",
+    "addSong": "Add new Song",
+    "dangerZone": "Danger Zone",
+    "deleteAccount": "Delete Account"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "Metadata": {
+    "title": "Focused Shares",
+    "description": "Découvrez un univers alliant concentration et musique, avec des styles variés allant du hip-hop lo-fi aux sons de pluie. Partagez vos vidéos YouTube favorites dans cet espace musical diversifié"
+  },
+  "Home": {
+    "title": "Améliorez votre concentration avec Focus Song",
+    "description": "Découvrez un univers alliant concentration et musique, avec des styles variés allant du hip-hop lo-fi aux sons de pluie. Partagez vos vidéos YouTube favorites dans cet espace musical diversifié",
+    "cta": "Découvrir Focus Song"
+  },
+  "InLive": {
+    "text": "En live"
+  },
+  "Menu": {
+    "account": "Mon compte",
+    "signIn": "Se connecter",
+    "signOut": "Se déconnecter",
+    "addSong": "Ajouter une musique",
+    "dangerZone": "Zone dangereuse",
+    "deleteAccount": "Supprimer mon compte"
+  }
+}

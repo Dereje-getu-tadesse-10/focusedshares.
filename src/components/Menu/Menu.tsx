@@ -6,31 +6,32 @@ import { signOut } from 'next-auth/react';
 import { AddSong } from '@/src/components/Modals/AddSong';
 import NiceModal from '@ebay/nice-modal-react';
 import { ConfirmDeleteAccount } from '../Modals/ConfirmDeleteAccount';
+import { useTranslations } from 'next-intl';
 
 const menuItems = [
   {
-    groupeName: 'My account',
+    groupeName: 'account',
     items: [
       {
         id: 'song',
-        label: 'Add new song',
+        label: 'addSong',
         icon: <Plus size={16} />,
         onClick: () => NiceModal.show(AddSong),
       },
       {
         id: 'logout',
-        label: 'Logout',
+        label: 'signOut',
         icon: <LogOut size={16} />,
         onClick: () => signOut(),
       },
     ],
   },
   {
-    groupeName: 'Danger zone',
+    groupeName: 'dangerZone',
     items: [
       {
         id: 'delete',
-        label: 'Delete account',
+        label: 'deleteAccount',
         icon: <Trash2 size={16} />,
         onClick: () => NiceModal.show(ConfirmDeleteAccount),
       },
@@ -74,55 +75,53 @@ const menuGroupLabel = css({
   fontSize: 'sm',
 });
 
-type AppMenuProps = {
-  src: string;
-  alt: string;
-};
-
-export const AppMenu = ({ src, alt }: { src: string; alt: string }) => (
-  <Menu.Root
-    onSelect={(id) => {
-      const selectedItem = menuItems.find((item) =>
-        item.items.some((subItem) => subItem.id === id.value)
-      );
-
-      if (selectedItem) {
-        const subItem = selectedItem.items.find(
-          (subItem) => subItem.id === id.value
+export const AppMenu = ({ src, alt }: { src: string; alt: string }) => {
+  const t = useTranslations('Menu');
+  return (
+    <Menu.Root
+      onSelect={(id) => {
+        const selectedItem = menuItems.find((item) =>
+          item.items.some((subItem) => subItem.id === id.value)
         );
-        if (subItem && subItem.onClick) {
-          subItem.onClick();
+
+        if (selectedItem) {
+          const subItem = selectedItem.items.find(
+            (subItem) => subItem.id === id.value
+          );
+          if (subItem && subItem.onClick) {
+            subItem.onClick();
+          }
         }
-      }
-    }}
-  >
-    <Menu.Trigger>
-      <ProfileAvatar src={src} alt={alt} />
-    </Menu.Trigger>
-    <Menu.Positioner>
-      <Menu.Content className={content}>
-        {menuItems.map((item) => (
-          <Menu.ItemGroup key={item.groupeName} id={item.groupeName}>
-            <Menu.ItemGroupLabel
-              className={menuGroupLabel}
-              htmlFor={item.groupeName}
-            >
-              {item.groupeName}
-            </Menu.ItemGroupLabel>
-            <Menu.Separator
-              className={css({
-                color: 'var(--colors-input-focus)',
-              })}
-            />
-            {item.items.map((item) => (
-              <Menu.Item className={menu} id={item.id} key={item.id}>
-                <Menu.Item id={item.id}>{item.icon}</Menu.Item>
-                <Menu.Item id={item.id}>{item.label}</Menu.Item>
-              </Menu.Item>
-            ))}
-          </Menu.ItemGroup>
-        ))}
-      </Menu.Content>
-    </Menu.Positioner>
-  </Menu.Root>
-);
+      }}
+    >
+      <Menu.Trigger>
+        <ProfileAvatar src={src} alt={alt} />
+      </Menu.Trigger>
+      <Menu.Positioner>
+        <Menu.Content className={content}>
+          {menuItems.map((item) => (
+            <Menu.ItemGroup key={item.groupeName} id={item.groupeName}>
+              <Menu.ItemGroupLabel
+                className={menuGroupLabel}
+                htmlFor={item.groupeName}
+              >
+                {t(item.groupeName)}
+              </Menu.ItemGroupLabel>
+              <Menu.Separator
+                className={css({
+                  color: 'var(--colors-input-focus)',
+                })}
+              />
+              {item.items.map((item) => (
+                <Menu.Item className={menu} id={item.id} key={item.id}>
+                  <Menu.Item id={item.id}>{item.icon}</Menu.Item>
+                  <Menu.Item id={item.id}>{t(item.label)}</Menu.Item>
+                </Menu.Item>
+              ))}
+            </Menu.ItemGroup>
+          ))}
+        </Menu.Content>
+      </Menu.Positioner>
+    </Menu.Root>
+  );
+};

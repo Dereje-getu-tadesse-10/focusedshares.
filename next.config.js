@@ -29,4 +29,6 @@ const withPWA = require('@ducanh2912/next-pwa').default({
   },
 });
 
-module.exports = withPWA(nextConfig);
+const withNextIntl = require('next-intl/plugin')();
+
+module.exports = withNextIntl(withPWA(nextConfig));

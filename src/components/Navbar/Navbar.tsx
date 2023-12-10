@@ -6,9 +6,13 @@ import { css } from '@/styled-system/css';
 import { Switcher } from '@/src/components/Switcher/Switcher';
 import { Button } from '@/src/stories/button/button';
 import Link from 'next/link';
+import { auth } from '@/src/lib/auth';
+import { useTranslations } from 'next-intl';
 
 export const Navbar = () => {
   const { data: session } = useSession();
+  const t = useTranslations('Menu');
+
   return (
     <header
       className={css({
@@ -63,7 +67,7 @@ export const Navbar = () => {
               onClick={() => signIn('google')}
               aria-label='Sign In'
             >
-              Sign In
+              {t('signIn')}
             </Button>
           )}
         </div>
