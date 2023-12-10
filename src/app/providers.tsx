@@ -15,7 +15,7 @@ export const Providers = ({ children }: { children: React.ReactNode }) => {
     <SessionProvider>
       <QueryClientProvider client={client}>
         <ReactQueryStreamedHydration>
-          <ThemeProvider defaultTheme='dark'>
+          <ThemeProvider defaultTheme='light'>
             <NiceModal.Provider>{children}</NiceModal.Provider>
           </ThemeProvider>
           <Toaster />

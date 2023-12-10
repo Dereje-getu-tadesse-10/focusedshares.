@@ -48,6 +48,7 @@ export const Footer = () => {
             flexDirection: 'row',
             gap: '0',
           },
+          fontSize: 'sm',
         })}
       >
         <p
@@ -77,6 +78,18 @@ export const Footer = () => {
           </ul>
         </div>
       </div>
+      <a
+        href='https://dereje.fr'
+        className={css({
+          fontSize: 'sm',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          color: 'var(--colors-text-muted)',
+        })}
+      >
+        Built with 🖤 by Dereje
+      </a>
     </footer>
   );
 };
