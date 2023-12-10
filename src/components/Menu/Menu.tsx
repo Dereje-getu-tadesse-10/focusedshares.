@@ -44,7 +44,7 @@ const content = css({
   border: '1px solid var(--colors-input-focus)',
   outline: 'none',
   rounded: 'sm',
-  width: '200px',
+  width: '210px',
 });
 
 const menu = css({

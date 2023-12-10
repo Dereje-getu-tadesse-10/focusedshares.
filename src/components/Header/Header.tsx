@@ -1,5 +1,4 @@
 import pick from 'lodash/pick';
-import { useTranslations } from 'next-intl';
 import { Navbar } from '../Navbar/Navbar';
 import { NextIntlClientProvider, useMessages } from 'next-intl';
 
