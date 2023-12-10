@@ -82,9 +82,7 @@ export const GenreSelect = ({
       </Select.Label>
       <Select.Control>
         <Select.Trigger className={trigger}>
-          <Select.ValueText placeholder='Select a Genre' id={'genre'}>
-            {value}
-          </Select.ValueText>
+          <Select.ValueText id={'genre'}>{value}</Select.ValueText>
         </Select.Trigger>
       </Select.Control>
       <Select.Positioner
