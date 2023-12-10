@@ -62,7 +62,7 @@ export default function RootLayout({
         <Script
           src='https://eu.umami.is/script.js'
           data-website-id='05b1b74c-1c34-418a-871b-5f04df643156'
-          async
+          strategy='worker'
         />
       </head>
       <body className={inter.className}>
