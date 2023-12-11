@@ -22,5 +22,10 @@
   "Songs": {
     "title": "Songs",
     "description": "Here you can find all the songs that are currently available on Focused Shares and you can sign up to add your own songs."
+  },
+  "Song": {
+    "viewsCount": "The number of views is not synchronized in real time with YouTube.",
+    "views": "Views",
+    "inLive": "In Live"
   }
 }

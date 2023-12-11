@@ -38,10 +38,9 @@ export async function generateMetadata(
 export default async function SongPage({
   params,
 }: {
-  params: { song: string };
+  params: { song: string; locale: string };
 }) {
   const id = params.song;
-  console.log(params);
 
   const songData = await getSong(id);
   const songsData = await getSongs(5);
@@ -63,13 +62,11 @@ export default async function SongPage({
     },
   });
 
-  console.log(song);
-
   return (
     <main className={css({ mx: '1rem' })}>
       <GridWrapper>
         <YoutubeEmbed id={id} title={song.title} song={song} />
-        <RelatedSong song={songs} />
+        <RelatedSong song={songs} lang={params.locale} />
       </GridWrapper>
     </main>
   );

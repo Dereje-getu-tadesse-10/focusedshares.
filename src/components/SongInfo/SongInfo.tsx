@@ -1,9 +1,12 @@
 import { formatNumber, truncate } from '@/src/lib/youtube';
 import { Song } from '@/src/server/youtube.server';
 import { css } from '@/styled-system/css';
+import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 
 export const SongInfo = ({ song }: { song: Song }) => {
+  const t = useTranslations('Song');
+
   return (
     <div
       className={css({
@@ -35,9 +38,12 @@ export const SongInfo = ({ song }: { song: Song }) => {
       >
         <p>
           {song.category} •{' '}
-          {song.duration === '0:00' ? 'In live' : song.duration}{' '}
+          {song.duration === '0:00' ? t('inLive') : song.duration}{' '}
         </p>
-        • <p>{formatNumber(song.viewCount)} views</p>
+        •{' '}
+        <p>
+          {formatNumber(song.viewCount)} {t('views')}
+        </p>
       </div>
       <p
         className={css({
@@ -46,7 +52,7 @@ export const SongInfo = ({ song }: { song: Song }) => {
           color: 'var(--colors-text-muted)',
         })}
       >
-        The number of views is not synchronized in real time with YouTube.
+        {t('viewsCount')}
       </p>
     </div>
   );
