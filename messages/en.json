@@ -27,5 +27,9 @@
     "viewsCount": "The number of views is not synchronized in real time with YouTube.",
     "views": "Views",
     "inLive": "In Live"
+  },
+  "AddSong": {
+    "title": "Add new song",
+    "description": "Add new song to the playlist"
   }
 }

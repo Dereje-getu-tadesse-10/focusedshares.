@@ -27,5 +27,9 @@
     "viewsCount": "Le nombre de vues n'est pas synchronisé en temps réel avec YouTube.",
     "views": "Vues",
     "inLive": "En Live"
+  },
+  "AddSong": {
+    "title": "Ajouter une nouvelle chanson",
+    "description": "Ajouter une nouvelle chanson à la playlist."
   }
 }

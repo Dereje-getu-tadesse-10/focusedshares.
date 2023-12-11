@@ -1,3 +1,4 @@
+'use client';
 import { Menu } from '@ark-ui/react';
 import { LogOut, Plus, Trash2 } from 'lucide-react';
 import { ProfileAvatar } from '@/src/stories/avatar/avatar';
