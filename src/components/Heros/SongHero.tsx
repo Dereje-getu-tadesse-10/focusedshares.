@@ -18,11 +18,14 @@ export const SongHero = () => (
     </h1>
     <p
       className={css({
+        mt: '.4rem',
         color: 'var(--colors-text-muted)',
+        maxW: '800px',
+        textStyle: 'body',
       })}
     >
-      Here you can find all the songs that are currently available on Focused
-      Shares and you can sign up to add your own songs.
+      Here you can find a collection of songs to help you focus on your work. If
+      you don't find what you're looking for, you can always add your own songs.
     </p>
   </div>
 );

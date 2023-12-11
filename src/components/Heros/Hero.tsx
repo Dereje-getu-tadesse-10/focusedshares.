@@ -1,6 +1,9 @@
 import Link from 'next/link';
+import Image, { ImageProps } from 'next/image';
 import { button } from '@/src/stories/button/button';
 import { css } from '@/styled-system/css';
+import { ThemedImage } from './ThemedImage';
+
 export const Hero = () => {
   return (
     <section
@@ -11,8 +14,7 @@ export const Hero = () => {
         alignItems: 'center',
         gap: '4',
         textAlign: 'center',
-        maxWidth: '800px',
-        margin: '6rem auto',
+        margin: '4rem auto',
         padding: '0 1rem',
       })}
     >
@@ -33,15 +35,27 @@ export const Hero = () => {
           fontSize: '1rem',
           fontWeight: 'medium',
           color: 'var(--colors-text-muted)',
+          maxWidth: '800px',
         })}
       >
         Discover a world combining focus and music, featuring lo-fi hip hop to
         rain sounds. Share your favorite YouTube videos in our diverse musical
         community.
       </p>
-      <Link className={button({ visual: 'solid' })} href={'/songs'}>
-        Discover now
-      </Link>
+      <div className={css({ mt: '1rem' })}>
+        <Link className={button({ visual: 'solid' })} href={'/songs'}>
+          Discover now
+        </Link>
+      </div>
+      <div
+        className={css({
+          mt: '2rem',
+          maxW: '1200px',
+          width: '100%',
+        })}
+      >
+        <ThemedImage />
+      </div>
     </section>
   );
 };

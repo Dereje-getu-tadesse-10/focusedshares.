@@ -59,7 +59,6 @@ export const addSong = action(FormSchema, async ({ url, category }) => {
       message: 'Song already exists',
     };
   }
-
   const data = {
     title: response.items[0].snippet.title,
     thumb: response.items[0].snippet.thumbnails.medium.url,
@@ -68,7 +67,6 @@ export const addSong = action(FormSchema, async ({ url, category }) => {
     youtubeId: url,
     duration: formatDuration(response.items[0].contentDetails.duration),
   };
-
   // add song to database
   await prisma.youtubeSong.create({
     data: {
