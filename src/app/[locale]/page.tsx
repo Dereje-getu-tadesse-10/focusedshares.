@@ -12,7 +12,7 @@ export default async function Home({
 }) {
   unstable_setRequestLocale(locale);
 
-  const songs: MinimalSong[] = await getSongs(7);
+  const songs: MinimalSong[] = await getSongs(9);
   return (
     <main>
       <Hero lang={locale} />

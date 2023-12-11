@@ -18,5 +18,9 @@
     "addSong": "Add new Song",
     "dangerZone": "Danger Zone",
     "deleteAccount": "Delete Account"
+  },
+  "Songs": {
+    "title": "Songs",
+    "description": "Here you can find all the songs that are currently available on Focused Shares and you can sign up to add your own songs."
   }
 }

@@ -41,6 +41,7 @@ export default async function SongPage({
   params: { song: string };
 }) {
   const id = params.song;
+  console.log(params);
 
   const songData = await getSong(id);
   const songsData = await getSongs(5);

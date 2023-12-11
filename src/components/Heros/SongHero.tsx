@@ -1,28 +1,31 @@
 import { css } from '@/styled-system/css';
+import { useTranslations } from 'next-intl';
 
-export const SongHero = () => (
-  <div
-    className={css({
-      mx: 4,
-      mb: 7,
-    })}
-  >
-    <h1
+export const SongHero = () => {
+  const t = useTranslations('Songs');
+  return (
+    <div
       className={css({
-        fontSize: '2xl',
-        fontWeight: '600',
-        color: 'var(--colors-text)',
+        mx: 4,
+        mb: 7,
       })}
     >
-      Songs
-    </h1>
-    <p
-      className={css({
-        color: 'var(--colors-text-muted)',
-      })}
-    >
-      Here you can find all the songs that are currently available on Focused
-      Shares and you can sign up to add your own songs.
-    </p>
-  </div>
-);
+      <h1
+        className={css({
+          fontSize: '2xl',
+          fontWeight: '600',
+          color: 'var(--colors-text)',
+        })}
+      >
+        {t('title')}
+      </h1>
+      <p
+        className={css({
+          color: 'var(--colors-text-muted)',
+        })}
+      >
+        {t('description')}
+      </p>
+    </div>
+  );
+};

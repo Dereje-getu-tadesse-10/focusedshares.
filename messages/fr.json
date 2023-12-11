@@ -18,5 +18,9 @@
     "addSong": "Ajouter une musique",
     "dangerZone": "Zone dangereuse",
     "deleteAccount": "Supprimer mon compte"
+  },
+  "Songs": {
+    "title": "Chansons",
+    "description": "Voici où vous pouvez trouver toutes les chansons actuellement disponibles sur Focused Shares, et vous pouvez vous inscrire pour ajouter vos propres chansons."
   }
 }

@@ -26,7 +26,7 @@ export const ContainerSongs = ({
       })}
     >
       {songs.map((song) => (
-        <Song key={song.youtubeId} song={song} inLive={t('text')} />
+        <Song key={song.youtubeId} song={song} inLive={t('text')} lang={lang} />
       ))}
     </section>
   );
@@ -35,13 +35,15 @@ export const ContainerSongs = ({
 export const Song = ({
   song,
   inLive,
+  lang,
 }: {
   song: MinimalSong;
   inLive: string;
+  lang: string;
 }) => {
   return (
     <Link
-      href={`/${song.youtubeId}`}
+      href={`/${lang}/${song.youtubeId}`}
       className={css({
         width: '100%',
       })}

@@ -73,7 +73,7 @@ export default async function LocaleLayout({
       </head>
       <body>
         <Providers>
-          <Header lang={locale} />
+          <Header />
           {children}
           <Footer />
         </Providers>
