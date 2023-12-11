@@ -31,8 +31,8 @@ export const Preview = ({ songs }: { songs: MinimalSong[] }) => {
           paddingX: '1rem',
         })}
       >
-        If you don't find what you're looking for, you can always add your own
-        songs.
+        If you don&apos;t find what you&apos;re looking for, you can always add
+        your own songs.
       </p>
       <div
         className={css({

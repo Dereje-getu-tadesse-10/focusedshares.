@@ -25,7 +25,8 @@ export const SongHero = () => (
       })}
     >
       Here you can find a collection of songs to help you focus on your work. If
-      you don't find what you're looking for, you can always add your own songs.
+      you don&apos;t find what you&apos;re looking for, you can always add your
+      own songs.
     </p>
   </div>
 );
