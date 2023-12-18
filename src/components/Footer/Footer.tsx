@@ -86,6 +86,7 @@ export const Footer = () => {
           justifyContent: 'center',
           alignItems: 'center',
           color: 'var(--colors-text-muted)',
+          mt: '.7rem',
         })}
       >
         Built with 🖤 by Dereje

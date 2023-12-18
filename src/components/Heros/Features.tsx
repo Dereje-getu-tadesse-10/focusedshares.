@@ -25,8 +25,9 @@ export const Features = () => {
   return (
     <section
       className={css({
-        maxW: '1200px',
+        maxW: '1000px',
         paddingX: '1rem',
+        mx: 'auto',
       })}
     >
       <h1
