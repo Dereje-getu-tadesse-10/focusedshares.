@@ -1,3 +1,4 @@
+import { cache } from 'react';
 import { YoutubeSong } from '@prisma/client';
 import { prisma } from '@/src/lib/prisma';
 
@@ -9,11 +10,11 @@ export type MinimalSong = Pick<
 >;
 
 // Get songs from data with limit or not
-export const getSongs = async (limit?: number) => {
+export const getSongs = cache(async (limit?: number) => {
   const res: MinimalSong[] = await prisma.youtubeSong.findMany({
     take: limit ? limit : undefined,
     orderBy: {
-      localViews: 'desc',
+      localViews: 'asc',
     },
     select: {
       title: true,
@@ -24,7 +25,7 @@ export const getSongs = async (limit?: number) => {
     },
   });
   return res;
-};
+});
 
 // Get song by id
 export const getSong = async (id: string) => {

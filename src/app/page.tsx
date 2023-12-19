@@ -4,6 +4,7 @@ import { Features } from '../components/Heros/Features';
 import { Preview } from '../components/Heros/Preview';
 
 export const runtime = 'edge';
+export const revalidate = 86400;
 
 export default async function Home() {
   const songs: MinimalSong[] = await getSongs(3);

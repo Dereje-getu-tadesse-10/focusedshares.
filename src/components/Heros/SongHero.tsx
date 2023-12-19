@@ -18,7 +18,7 @@ export const SongHero = () => (
     </h1>
     <p
       className={css({
-        mt: '.4rem',
+        mt: '.5rem',
         color: 'var(--colors-text-muted)',
         maxW: '800px',
         textStyle: 'body',
