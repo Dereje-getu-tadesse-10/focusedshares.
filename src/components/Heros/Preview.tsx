@@ -11,7 +11,7 @@ export const Preview = ({ songs }: { songs: MinimalSong[] }) => {
         mt: '6rem',
       })}
     >
-      <h1
+      {/* <h1
         className={css({
           color: 'var(--colors-text)',
           fontWeight: '500',
@@ -20,8 +20,8 @@ export const Preview = ({ songs }: { songs: MinimalSong[] }) => {
         })}
       >
         Preview Songs
-      </h1>
-      <p
+      </h1> */}
+      {/* <p
         className={css({
           color: 'var(--colors-text-muted)',
           fontWeight: '500',
@@ -33,24 +33,13 @@ export const Preview = ({ songs }: { songs: MinimalSong[] }) => {
       >
         If you don&apos;t find what you&apos;re looking for, you can always add
         your own songs.
-      </p>
+      </p> */}
       <div
         className={css({
           mt: '3rem',
         })}
       >
         <ContainerSongs songs={songs} />
-      </div>
-      <div
-        className={css({
-          display: 'flex',
-          justifyContent: 'center',
-          mt: '3rem',
-        })}
-      >
-        <Link href={'/songs'} className={button({ visual: 'solid' })}>
-          Discover more songs
-        </Link>
       </div>
     </section>
   );

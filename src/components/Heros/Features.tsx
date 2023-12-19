@@ -1,5 +1,7 @@
+import { button } from '@/src/stories/button/button';
 import { css } from '@/styled-system/css';
 import { Music, AudioLines, Share2 } from 'lucide-react';
+import Link from 'next/link';
 
 const features = [
   {
@@ -28,6 +30,7 @@ export const Features = () => {
         maxW: '1000px',
         paddingX: '1rem',
         mx: 'auto',
+        mt: '3rem',
       })}
     >
       <h1
@@ -85,6 +88,17 @@ export const Features = () => {
             </p>
           </div>
         ))}
+      </div>
+      <div
+        className={css({
+          display: 'flex',
+          justifyContent: 'center',
+          mt: '3rem',
+        })}
+      >
+        <Link href={'/songs'} className={button({ visual: 'solid' })}>
+          Discover more songs
+        </Link>
       </div>
     </section>
   );

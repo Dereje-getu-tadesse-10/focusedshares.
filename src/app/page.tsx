@@ -11,8 +11,8 @@ export default async function Home() {
   return (
     <main>
       <Hero />
-      <Features />
       <Preview songs={songs} />
+      <Features />
     </main>
   );
 }

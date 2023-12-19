@@ -1,8 +1,6 @@
 import Link from 'next/link';
-import Image, { ImageProps } from 'next/image';
 import { button } from '@/src/stories/button/button';
 import { css } from '@/styled-system/css';
-import { ThemedImage } from './ThemedImage';
 
 export const Hero = () => {
   return (
@@ -47,7 +45,7 @@ export const Hero = () => {
           Discover now
         </Link>
       </div>
-      <div
+      {/* <div
         className={css({
           mt: '2rem',
           maxW: '1200px',
@@ -55,7 +53,7 @@ export const Hero = () => {
         })}
       >
         <ThemedImage />
-      </div>
+      </div> */}
     </section>
   );
 };
