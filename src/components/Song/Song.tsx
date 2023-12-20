@@ -87,7 +87,7 @@ export const ContainerSongs = ({
           })}
         >
           {playlists.map((playlist) => (
-            <SpotifyPlaylists playlist={playlist} />
+            <SpotifyPlaylists key={playlist.playlist_id} playlist={playlist} />
           ))}
         </Tabs.Content>
       </Tabs.Root>
