@@ -63,17 +63,9 @@ export const SpotifyPlaylists = ({
             className={css({
               display: 'flex',
               alignItems: 'center',
+              gap: '1px',
             })}
           >
-            <span
-              className={css({
-                color: 'var(--colors-text-muted)',
-                fontWeight: 'medium',
-                fontSize: '.8rem',
-              })}
-            >
-              {playlist.category} •
-            </span>{' '}
             <p
               className={css({
                 color: 'var(--colors-text-muted)',
@@ -81,7 +73,7 @@ export const SpotifyPlaylists = ({
                 fontSize: '.8rem',
               })}
             >
-              {playlist.playlist_total_tracks} Tracks
+              {playlist.category} • {playlist.playlist_total_tracks} Tracks
             </p>
           </div>
         </div>
