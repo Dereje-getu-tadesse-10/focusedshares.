@@ -65,6 +65,17 @@ model YoutubeSong {
   localViews   Int?     @default(0)
 }
 
+model SpotifyPlaylist {
+  id                      String   @id @default(cuid())
+  playlist_title          String
+  playlist_description    String
+  playlist_total_tracks   Int
+  playlist_external_urls  String
+  playlist_image          String
+  playlist_id             String @unique
+  category     Category
+}
+
 enum Category {
   KPOP
   JAZZ

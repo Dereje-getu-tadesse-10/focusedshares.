@@ -1,8 +1,9 @@
 import React from 'react';
-import { Dialog, Portal } from '@ark-ui/react';
+import { Dialog, Portal, Tabs } from '@ark-ui/react';
 import NiceModal, { useModal } from '@ebay/nice-modal-react';
 import { YoutubeForm } from '../Forms/Youtube/Youtube';
 import { css } from '@/styled-system/css';
+import { SpotifyForm } from '../Forms/Spotify/Spotify';
 
 export const AddSong = NiceModal.create(() => {
   const modal = useModal();
@@ -59,7 +60,57 @@ export const AddSong = NiceModal.create(() => {
               >
                 Add a new song to the playlist
               </Dialog.Description>
-              <YoutubeForm />
+              <Tabs.Root
+                defaultValue='youtube'
+                lazyMount
+                unmountOnExit
+                className={css({
+                  mt: '.8rem',
+                })}
+              >
+                <Tabs.List
+                  className={css({
+                    display: 'flex',
+                    flexDirection: 'row',
+                    flexShrink: '0',
+                    position: 'relative',
+                    overflow: 'auto',
+                    gap: '.4rem',
+                  })}
+                >
+                  <Tabs.Trigger
+                    className={css({
+                      cursor: 'pointer',
+                      padding: '3px',
+                    })}
+                    value='youtube'
+                  >
+                    Youtube
+                  </Tabs.Trigger>
+                  <Tabs.Trigger
+                    className={css({
+                      cursor: 'pointer',
+                    })}
+                    value='spotify'
+                  >
+                    Spotify
+                  </Tabs.Trigger>
+                  <Tabs.Indicator
+                    className={css({
+                      bg: 'var(--colors-primary)',
+                      height: '2px',
+                      width: '100%',
+                      bottom: '0',
+                    })}
+                  />
+                </Tabs.List>
+                <Tabs.Content value='youtube'>
+                  <YoutubeForm />
+                </Tabs.Content>
+                <Tabs.Content value='spotify'>
+                  <SpotifyForm />
+                </Tabs.Content>
+              </Tabs.Root>
             </Dialog.Content>
           </Dialog.Positioner>
         </Portal>

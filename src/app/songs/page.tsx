@@ -3,8 +3,11 @@ import { ContainerSongs } from '@/src/components/Song/Song';
 import { getSongs } from '@/src/server/youtube.server';
 import { css } from '@/styled-system/css';
 import { SongHero } from '@/src/components/Heros/SongHero';
+import { getAllPlaylistSpotify } from '@/src/server/spotify.server';
+import { SpotifyPlaylist } from '@prisma/client';
 
 export const runtime = 'edge';
+export const revalidate = 0;
 
 export const metadata: Metadata = {
   title: 'Songs',
@@ -43,11 +46,11 @@ export const metadata: Metadata = {
 
 const SongsPage = async () => {
   const songs = await getSongs();
-
+  const playlists = await getAllPlaylistSpotify();
   return (
     <main className={css({ my: 7 })}>
       <SongHero />
-      <ContainerSongs songs={songs} />
+      <ContainerSongs songs={songs} playlists={playlists} />
     </main>
   );
 };

@@ -11,7 +11,12 @@ import {
 } from '@/src/lib/youtube';
 import { GENRES } from '@/src/components/Forms/Youtube/genres';
 import { prisma } from '../lib/prisma';
-import { Category } from '@prisma/client';
+import { Category, Prisma } from '@prisma/client';
+import {
+  getPlaylist,
+  isValidSpotifyPlaylistUrl,
+  playlistId,
+} from '../lib/spotify';
 
 export const action = createSafeActionClient();
 
@@ -59,30 +64,89 @@ export const addSong = action(FormSchema, async ({ url, category }) => {
       message: 'Song already exists',
     };
   }
-  const data = {
+
+  const data: Prisma.YoutubeSongCreateInput = {
     title: response.items[0].snippet.title,
     thumb: response.items[0].snippet.thumbnails.medium.url,
     channelTitle: response.items[0].snippet.channelTitle,
     viewCount: response.items[0].statistics.viewCount,
     youtubeId: url,
     duration: formatDuration(response.items[0].contentDetails.duration),
+    category: category as Category,
   };
   // add song to database
   await prisma.youtubeSong.create({
-    data: {
-      category: category as Category,
-      title: response.items[0].snippet.title,
-      channelTitle: data.channelTitle,
-      thumb: data.thumb,
-      viewCount: data.viewCount,
-      youtubeId: videoIdFromUrl,
-      duration: data.duration,
-    },
+    data: data,
   });
 
-  // return success
   return {
     success: true,
     message: 'Song added successfully!',
   };
 });
+
+// add song form data schema
+const FormSchemaSpotify = zfd.formData({
+  url: zfd.text(
+    z.string().url().min(1).refine(isValidSpotifyPlaylistUrl, {
+      message: 'Invalid spotify playlist url',
+    })
+  ),
+  category: zfd.text(
+    z.string().refine(
+      (value) => {
+        return GENRES.some((genre) => genre.id === value);
+      },
+      { message: 'Select a genre' }
+    )
+  ),
+});
+
+export const addSpotifyPlaylist = action(
+  FormSchemaSpotify,
+  async ({ url, category }) => {
+    // get session
+    const session = await auth();
+
+    // if no session
+    if (!session) {
+      throw new Error('You must be logged in');
+    }
+
+    const playlistIdFromUrl = playlistId({ url });
+    const playlist = await getPlaylist(playlistIdFromUrl);
+
+    const playlistExist = await prisma.spotifyPlaylist.findUnique({
+      where: {
+        playlist_id: playlistIdFromUrl,
+      },
+    });
+
+    // if song already exists return error
+    if (playlistExist) {
+      return {
+        success: false,
+        message: 'Playlist already exists',
+      };
+    }
+
+    const playlistData: Prisma.SpotifyPlaylistCreateInput = {
+      playlist_image: playlist.images[0].url,
+      playlist_title: playlist.name,
+      playlist_description: playlist.description,
+      playlist_total_tracks: playlist.tracks.total,
+      playlist_external_urls: playlist.external_urls.spotify,
+      category: category as Category,
+      playlist_id: playlistIdFromUrl,
+    };
+
+    await prisma.spotifyPlaylist.create({
+      data: playlistData,
+    });
+
+    return {
+      success: true,
+      message: 'Playlist added successfully!',
+    };
+  }
+);

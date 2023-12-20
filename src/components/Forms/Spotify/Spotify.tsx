@@ -1,16 +1,17 @@
 import { css } from '@/styled-system/css';
 import { Button } from '@/src/stories/button/button';
 import { Input } from '@/src/stories/input/input';
-import { addSong } from '@/src/server/song.server';
+import { addSong, addSpotifyPlaylist } from '@/src/server/song.server';
 import { GENRES } from '@/src/components/Forms/Youtube/genres';
 import toast from 'react-hot-toast';
 import { useModal } from '@ebay/nice-modal-react';
 
-export const YoutubeForm = () => {
+export const SpotifyForm = () => {
   const modal = useModal();
 
   const createSong = async (formData: FormData) => {
-    const res = await addSong(formData);
+    const res = await addSpotifyPlaylist(formData);
+    console.log(res);
     if (res.data?.success) {
       modal.hide();
       toast.success(res.data?.message);
@@ -27,8 +28,8 @@ export const YoutubeForm = () => {
         })}
       >
         <Input
-          placeholder='https://www.youtube.com/watch?v=jfKfPfyJRdk'
-          label='Youtube url'
+          placeholder='https://open.spotify.com/playlist/37i9dQZF1DX5KpP2LN299J'
+          label='Spotify playlist url'
           labelFor='url'
           name={'url'}
         />
@@ -83,7 +84,7 @@ export const YoutubeForm = () => {
             justifyContent: 'flex-end',
           })}
         >
-          <Button type={'submit'}>Add song</Button>
+          <Button type={'submit'}>Add playlist</Button>
         </div>
       </div>
     </form>
