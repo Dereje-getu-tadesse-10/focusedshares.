@@ -8,12 +8,16 @@ export const SpotifyPlaylists = ({
 }: {
   playlist: SpotifyPlaylist;
 }) => {
-  console.log(playlist);
   return (
     <Link
       href={playlist.playlist_external_urls}
       className={css({
         position: 'relative',
+        _hover: {
+          '& > div': {
+            display: 'block',
+          },
+        },
       })}
       target='_blank'
     >
@@ -23,7 +27,7 @@ export const SpotifyPlaylists = ({
         className={css({
           rounded: '2xl',
           width: '100%',
-          height: '230px',
+          // height: '230px',
           objectFit: 'cover',
           _hover: {
             rounded: '0',
@@ -35,19 +39,22 @@ export const SpotifyPlaylists = ({
       />
       <div
         className={css({
+          display: 'none',
           width: '95%',
           position: 'absolute',
-          bottom: '0',
+          bottom: '2.5',
           left: '50%',
-          transform: 'translate(-50%, -19%)',
+          transform: 'translate(-50%, 0%)',
         })}
       >
         <div
           className={css({
             backgroundColor: 'var(--colors-background)',
             width: '100%',
-            rounded: 'lg',
             padding: '5px',
+            _hover: {
+              borderRadius: 'lg',
+            },
           })}
         >
           <h1
@@ -81,6 +88,4 @@ export const SpotifyPlaylists = ({
     </Link>
   );
 };
-
-
 
