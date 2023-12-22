@@ -1,4 +1,4 @@
-import { MinimalSong, getSongs } from '@/src/server/youtube.server';
+import { MinimalSong, allYoutubeSongs } from '@/src/server/youtube.server';
 
 const URL = 'https://focusedshares.com';
 
@@ -31,7 +31,7 @@ function generateSiteMap(songs: MinimalSong[]) {
 }
 
 export async function GET() {
-  const songs = await getSongs();
+  const songs = await allYoutubeSongs();
   const body = generateSiteMap(songs);
 
   return new Response(body, {
