@@ -10,7 +10,7 @@ export const revalidate = 86400;
 
 export default async function Home() {
   const songs: MinimalSong[] = await youtubeSongWithLimit(3);
-  const playlists: SpotifyPlaylist[] = await playlistSpotifyWithLimit(3);
+  const playlists: SpotifyPlaylist[] = await playlistSpotifyWithLimit(4);
 
   return (
     <main>
