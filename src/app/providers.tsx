@@ -13,14 +13,10 @@ export const Providers = ({ children }: { children: React.ReactNode }) => {
   const [client] = useState(queryClient);
   return (
     <SessionProvider>
-      <QueryClientProvider client={client}>
-        <ReactQueryStreamedHydration>
-          <ThemeProvider defaultTheme='dark'>
-            <NiceModal.Provider>{children}</NiceModal.Provider>
-          </ThemeProvider>
-          <Toaster />
-        </ReactQueryStreamedHydration>
-      </QueryClientProvider>
+      <ThemeProvider defaultTheme='dark'>
+        <NiceModal.Provider>{children}</NiceModal.Provider>
+      </ThemeProvider>
+      <Toaster />
     </SessionProvider>
   );
 };
