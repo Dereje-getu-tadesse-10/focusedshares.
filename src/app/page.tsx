@@ -9,7 +9,7 @@ export const runtime = 'edge';
 export const revalidate = 86400;
 
 export default async function Home() {
-  const songs: MinimalSong[] = await youtubeSongWithLimit(3);
+  const songs: MinimalSong[] = await youtubeSongWithLimit(4);
   const playlists: SpotifyPlaylist[] = await playlistSpotifyWithLimit(4);
 
   return (

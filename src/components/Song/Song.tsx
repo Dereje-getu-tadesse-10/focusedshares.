@@ -130,7 +130,7 @@ export const ContainerSongs = ({
           value='youtube'
           className={css({
             display: 'grid',
-            gap: 7,
+            gap: '5px',
             my: 7,
             sm: {
               gridTemplateColumns: 'repeat(auto-fill, minmax(290px, 1fr))',
