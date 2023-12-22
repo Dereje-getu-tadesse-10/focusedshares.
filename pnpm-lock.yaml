@@ -32,12 +32,6 @@ dependencies:
   '@storybook/theming':
     specifier: ^7.6.5
     version: 7.6.5(react-dom@18.2.0)(react@18.2.0)
-  '@tanstack/react-query':
-    specifier: ^5.14.1
-    version: 5.14.1(react@18.2.0)
-  '@tanstack/react-query-next-experimental':
-    specifier: ^5.14.1
-    version: 5.14.1(@tanstack/react-query@5.14.1)(next@14.0.4)(react@18.2.0)
   lucide-react:
     specifier: ^0.294.0
     version: 0.294.0(react@18.2.0)
@@ -4290,31 +4284,6 @@ packages:
 
   /@swc/types@0.1.5:
     resolution: {integrity: sha512-myfUej5naTBWnqOCc/MdVOLVjXUXtIA+NpDrDBKJtLLg2shUjBu3cZmB/85RyitKc55+lUUyl7oRfLOvkr2hsw==}
-
-  /@tanstack/query-core@5.14.1:
-    resolution: {integrity: sha512-TlZarySCVEiap4K7BCvrsYZnX7jBbEkR55YMrk8ELcRbuAx6ydL+qoxqUt8Fq8VMvQyGt52icn6T7eJL1Q35KQ==}
-    dev: false
-
-  /@tanstack/react-query-next-experimental@5.14.1(@tanstack/react-query@5.14.1)(next@14.0.4)(react@18.2.0):
-    resolution: {integrity: sha512-9bi4Wp0lG6l0z2GTzwT8/IQWFcxL75nI//fRcg9k9+8uz4L/2blrBh+jhWg0kSgY1Udf0EmnfI8dUmKLTzSTVg==}
-    peerDependencies:
-      '@tanstack/react-query': ^5.14.1
-      next: ^13 || ^14
-      react: ^18.0.0
-    dependencies:
-      '@tanstack/react-query': 5.14.1(react@18.2.0)
-      next: 14.0.4(@babel/core@7.23.6)(react-dom@18.2.0)(react@18.2.0)
-      react: 18.2.0
-    dev: false
-
-  /@tanstack/react-query@5.14.1(react@18.2.0):
-    resolution: {integrity: sha512-v7jhe/3jhChiR0XJbGHaG5WNPd/cURwzDGBCr4rzpUTeudPzxrtVRKsF1xJRLcJK3qH/0gIwTYHIPZ3gj+01Yw==}
-    peerDependencies:
-      react: ^18.0.0
-    dependencies:
-      '@tanstack/query-core': 5.14.1
-      react: 18.2.0
-    dev: false
 
   /@testing-library/dom@9.3.3:
     resolution: {integrity: sha512-fB0R+fa3AUqbLHWyxXa2kGVtf1Fe1ZZFr0Zp6AIbIAzXb2mKbEXl+PCQNUOaq5lbTab5tfctfXRNsWXxa2f7Aw==}
