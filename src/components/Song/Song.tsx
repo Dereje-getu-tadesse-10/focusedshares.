@@ -1,6 +1,6 @@
 'use client';
 import { truncate } from '@/src/lib/youtube';
-import { MinimalSong } from '@/src/server/youtube.server';
+import { MinimalSong } from '@/src/server/requests';
 import { Tabs } from '@ark-ui/react';
 import { css } from '@/styled-system/css';
 import Image from 'next/image';

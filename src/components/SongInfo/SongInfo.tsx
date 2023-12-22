@@ -1,5 +1,5 @@
 import { formatNumber, truncate } from '@/src/lib/youtube';
-import { Song } from '@/src/server/youtube.server';
+import { Song } from '@/src/server/requests';
 import { css } from '@/styled-system/css';
 import Link from 'next/link';
 
