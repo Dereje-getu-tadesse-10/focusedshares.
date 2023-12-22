@@ -25,17 +25,17 @@ const menuItems = [
       },
     ],
   },
-  {
-    groupeName: 'Danger zone',
-    items: [
-      {
-        id: 'delete',
-        label: 'Delete account',
-        icon: <Trash2 size={16} />,
-        onClick: () => NiceModal.show(ConfirmDeleteAccount),
-      },
-    ],
-  },
+  // {
+  //   groupeName: 'Danger zone',
+  //   items: [
+  //     {
+  //       id: 'delete',
+  //       label: 'Delete account',
+  //       icon: <Trash2 size={16} />,
+  //       onClick: () => NiceModal.show(ConfirmDeleteAccount),
+  //     },
+  //   ],
+  // },
 ];
 
 const content = css({

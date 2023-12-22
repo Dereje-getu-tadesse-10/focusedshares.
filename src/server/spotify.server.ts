@@ -6,9 +6,12 @@ import { zfd } from 'zod-form-data';
 import { GENRES } from '@/src/components/Forms/genres';
 import { prisma } from '../lib/prisma';
 import { Category, Prisma } from '@prisma/client';
-import { getPlaylist, isValidSpotifyPlaylistUrl, playlistId } from '../lib/spotify';
-
-export const action = createSafeActionClient();
+import {
+  getPlaylist,
+  isValidSpotifyPlaylistUrl,
+  playlistId,
+} from '../lib/spotify';
+import { action } from './youtube.server';
 
 // add song form data schema
 const FormSchemaSpotify = zfd.formData({

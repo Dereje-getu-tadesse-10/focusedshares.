@@ -1,51 +1,11 @@
 import React from 'react';
 import { Dialog, Portal } from '@ark-ui/react';
 import NiceModal, { useModal } from '@ebay/nice-modal-react';
-import { useMutation } from '@tanstack/react-query';
-import { signOut } from 'next-auth/react';
-import { toast } from 'react-hot-toast';
 import { css } from '@/styled-system/css';
 import { Button } from '@/src/stories/button/button';
 
-const useDeleteAccount = () => {
-  const request = async () => {
-    const res = await fetch('/api/v1/users/delete', {
-      method: 'DELETE',
-    });
-    return res.json();
-  };
-
-  const {
-    mutate: deleteAccount,
-    data,
-    isPending,
-  } = useMutation({
-    mutationFn: request,
-    onSuccess: (data) => {
-      if (data.status === 200) {
-        signOut();
-      } else {
-        toast.error(
-          'Oops! Something went wrong trying to delete your account.'
-        );
-      }
-    },
-  });
-
-  return {
-    deleteAccount,
-    data,
-    isPending,
-  };
-};
-
 export const ConfirmDeleteAccount = NiceModal.create(() => {
   const modal = useModal();
-  const { deleteAccount, isPending } = useDeleteAccount();
-
-  const handleDeleteAccount = async () => {
-    deleteAccount();
-  };
 
   return (
     <Dialog.Root
@@ -101,9 +61,7 @@ export const ConfirmDeleteAccount = NiceModal.create(() => {
                 justifyContent: 'flex-end',
               })}
             >
-              <Button onClick={handleDeleteAccount} type={'submit'}>
-                Delete my account
-              </Button>
+              <Button type={'submit'}>Delete my account</Button>
             </div>
           </Dialog.Content>
         </Dialog.Positioner>
