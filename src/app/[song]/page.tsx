@@ -1,7 +1,7 @@
 import type { Metadata, ResolvingMetadata } from 'next';
 import { notFound } from 'next/navigation';
 import { css } from '@/styled-system/css';
-import { youtubeSongWithLimit, youtubeSong } from '@/src/server/youtube.server';
+import { youtubeSongWithLimit, youtubeSong } from '@/src/server/requests';
 import { YoutubeEmbed } from '@/src/components/YoutubeEmbed/YoutubeEmbed';
 import { GridWrapper } from '@/src/components/GridWrapper/GridWrapper';
 import { RelatedSong } from '@/src/components/RelatedSong/RelatedSong';

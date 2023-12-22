@@ -1,10 +1,9 @@
 import { Metadata } from 'next';
 import { ContainerSongs } from '@/src/components/Song/Song';
-import { allYoutubeSongs } from '@/src/server/youtube.server';
+import { allYoutubeSongs } from '@/src/server/requests';
 import { css } from '@/styled-system/css';
 import { SongHero } from '@/src/components/Heros/SongHero';
-import { allSpotifyPlaylists } from '@/src/server/spotify.server';
-import { SpotifyPlaylist } from '@prisma/client';
+import { allSpotifyPlaylists } from '@/src/server/requests';
 
 export const runtime = 'edge';
 export const revalidate = 0;

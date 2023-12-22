@@ -1,8 +1,6 @@
-import { MinimalSong } from '@/src/server/youtube.server';
+import { MinimalSong } from '@/src/server/requests';
 import { ContainerSongs } from '../Song/Song';
 import { css } from '@/styled-system/css';
-import Link from 'next/link';
-import { button } from '@/src/stories/button/button';
 import { SpotifyPlaylist } from '@prisma/client';
 
 export const Preview = ({

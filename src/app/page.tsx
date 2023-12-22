@@ -1,9 +1,9 @@
 import { Hero } from '@/src/components/Heros/Hero';
-import { MinimalSong, youtubeSongWithLimit } from '../server/youtube.server';
+import { MinimalSong, youtubeSongWithLimit } from '../server/requests';
 import { Features } from '../components/Heros/Features';
 import { Preview } from '../components/Heros/Preview';
 import { SpotifyPlaylist } from '@prisma/client';
-import { playlistSpotifyWithLimit } from '../server/spotify.server';
+import { playlistSpotifyWithLimit } from '../server/requests';
 
 export const runtime = 'edge';
 export const revalidate = 86400;
