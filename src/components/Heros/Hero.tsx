@@ -45,15 +45,6 @@ export const Hero = () => {
           Discover now
         </Link>
       </div>
-      {/* <div
-        className={css({
-          mt: '2rem',
-          maxW: '1200px',
-          width: '100%',
-        })}
-      >
-        <ThemedImage />
-      </div> */}
     </section>
   );
 };

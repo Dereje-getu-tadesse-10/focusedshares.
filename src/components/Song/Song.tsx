@@ -145,7 +145,7 @@ export const ContainerSongs = ({
           value='spotify'
           className={css({
             display: 'grid',
-            gap: '1rem',
+            gap: '5px',
             my: 7,
             sm: {
               gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))',
