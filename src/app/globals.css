@@ -80,8 +80,7 @@ body {
     inset: auto auto 60px 30px;
     margin: 0;
     font-size: 1.1rem;
-    font-family: 'Roboto Condensed', sans-serif;
-    font-weight: medium;
+    font-weight: 600;
     text-transform: uppercase;
     color: var(--colors-text-white);
   }
