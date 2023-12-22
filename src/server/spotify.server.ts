@@ -3,7 +3,7 @@ import { auth } from '@/src/lib/auth';
 import { createSafeActionClient } from 'next-safe-action';
 import { z } from 'zod';
 import { zfd } from 'zod-form-data';
-import { GENRES } from '@/src/components/Forms/Youtube/genres';
+import { GENRES } from '@/src/components/Forms/genres';
 import { prisma } from '../lib/prisma';
 import { Category, Prisma } from '@prisma/client';
 import { getPlaylist, isValidSpotifyPlaylistUrl, playlistId } from '../lib/spotify';

@@ -1,4 +1,4 @@
-import { GENRES } from '@/src/components/Forms/Youtube/genres';
+import { GENRES } from '@/src/components/Forms/genres';
 import { css } from '../../../styled-system/css';
 import { Select } from '@ark-ui/react';
 import Image from 'next/image';

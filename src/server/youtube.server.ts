@@ -9,7 +9,7 @@ import {
   isValidYouTubeUrl,
   videoId,
 } from '@/src/lib/youtube';
-import { GENRES } from '@/src/components/Forms/Youtube/genres';
+import { GENRES } from '@/src/components/Forms/genres';
 import { prisma } from '../lib/prisma';
 import { Category, Prisma } from '@prisma/client';
 import { isValidSpotifyPlaylistUrl } from '../lib/spotify';

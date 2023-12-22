@@ -2,7 +2,7 @@ import { css } from '@/styled-system/css';
 import { Button } from '@/src/stories/button/button';
 import { Input } from '@/src/stories/input/input';
 import { addSong } from '@/src/server/youtube.server';
-import { GENRES } from '@/src/components/Forms/Youtube/genres';
+import { GENRES } from '@/src/components/Forms/genres';
 import toast from 'react-hot-toast';
 import { useModal } from '@ebay/nice-modal-react';
 
