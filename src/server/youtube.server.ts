@@ -10,9 +10,26 @@ export type MinimalSong = Pick<
 >;
 
 // Get songs from data with limit or not
-export const getSongs = cache(async (limit?: number) => {
+export const allYoutubeSongs = async () => {
   const res: MinimalSong[] = await prisma.youtubeSong.findMany({
-    take: limit ? limit : undefined,
+    orderBy: {
+      localViews: 'asc',
+    },
+    select: {
+      title: true,
+      thumb: true,
+      youtubeId: true,
+      category: true,
+      duration: true,
+    },
+  });
+  return res;
+};
+
+// Get songs from data with limit or not
+export const youtubeSongWithLimit = cache(async (limit: number) => {
+  const res: MinimalSong[] = await prisma.youtubeSong.findMany({
+    take: limit,
     orderBy: {
       localViews: 'asc',
     },
@@ -28,7 +45,7 @@ export const getSongs = cache(async (limit?: number) => {
 });
 
 // Get song by id
-export const getSong = async (id: string) => {
+export const youtubeSong = async (id: string) => {
   const res: Song | null = await prisma.youtubeSong.findUnique({
     where: {
       youtubeId: id,

@@ -1,14 +1,13 @@
 import type { Metadata, ResolvingMetadata } from 'next';
 import { notFound } from 'next/navigation';
 import { css } from '@/styled-system/css';
-import { getSong, getSongs } from '@/src/server/youtube.server';
+import { youtubeSongWithLimit, youtubeSong } from '@/src/server/youtube.server';
 import { YoutubeEmbed } from '@/src/components/YoutubeEmbed/YoutubeEmbed';
 import { GridWrapper } from '@/src/components/GridWrapper/GridWrapper';
 import { RelatedSong } from '@/src/components/RelatedSong/RelatedSong';
 import { prisma } from '@/src/lib/prisma';
 
 export const runtime = 'edge';
-
 export const revalidate = 0;
 
 export async function generateMetadata(
@@ -17,7 +16,7 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const id = params.song;
 
-  const song = await getSong(id);
+  const song = await youtubeSong(id);
 
   if (!song) {
     notFound();
@@ -42,8 +41,8 @@ export default async function SongPage({
 }) {
   const id = params.song;
 
-  const songData = await getSong(id);
-  const songsData = await getSongs(5);
+  const songData = await youtubeSong(id);
+  const songsData = await youtubeSongWithLimit(5);
 
   const [song, songs] = await Promise.all([songData, songsData]);
 
@@ -61,8 +60,6 @@ export default async function SongPage({
       },
     },
   });
-
-  console.log(song);
 
   return (
     <main className={css({ mx: '1rem' })}>
