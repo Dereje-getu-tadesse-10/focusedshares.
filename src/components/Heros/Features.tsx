@@ -41,7 +41,7 @@ export const Features = () => {
           color: 'var(--colors-text)',
           fontWeight: 'semibold',
           textAlign: 'center',
-          fontSize: '2xl',
+          fontSize: '1xl',
         })}
       >
         Features
