@@ -6,6 +6,7 @@ import { ThemeProvider } from 'next-themes';
 import { Toaster } from 'react-hot-toast';
 import Snowfall from 'react-snowfall';
 
+
 export const Providers = ({ children }: { children: React.ReactNode }) => {
   return (
     <SessionProvider>

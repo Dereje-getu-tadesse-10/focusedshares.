@@ -5,6 +5,7 @@ import { Providers } from './providers';
 import { Navbar } from '@/src/components/Navbar/Navbar';
 import { Footer } from '../components/Footer/Footer';
 import Script from 'next/script';
+
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
@@ -61,6 +62,20 @@ export default function RootLayout({
         <Script
           src='https://eu.umami.is/script.js'
           data-website-id='05b1b74c-1c34-418a-871b-5f04df643156'
+        />
+        <Script
+          dangerouslySetInnerHTML={{
+            __html: `
+                  (function(h,o,t,j,a,r){
+                h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+                h._hjSettings={hjid:3804812,hjsv:6};
+                a=o.getElementsByTagName('head')[0];
+                r=o.createElement('script');r.async=1;
+                r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+                a.appendChild(r);
+            })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+          `,
+          }}
         />
       </head>
       <body className={inter.className}>
