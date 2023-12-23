@@ -33,13 +33,13 @@ export const button = cva({
     },
     radius: {
       full: { rounded: 'full' },
-      xl: { rounded: 'xl' },
+      md: { rounded: '.5rem' },
     },
   },
   defaultVariants: {
     visual: 'solid',
     size: 'sm',
-    radius: 'full',
+    radius: 'md',
   },
 });
 
