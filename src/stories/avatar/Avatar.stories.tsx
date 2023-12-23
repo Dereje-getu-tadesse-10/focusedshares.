@@ -6,24 +6,6 @@ const meta: Meta = {
   title: 'UI/Avatar',
   component: ProfileAvatar,
   tags: ['autodocs'],
-  argTypes: {
-    src: {
-      control: 'text',
-      description: 'Source',
-    },
-    alt: {
-      control: 'text',
-      description: 'Alt',
-    },
-    asChild: {
-      control: 'boolean',
-      description: 'As Child',
-    },
-  },
-  args: {
-    src: 'https://avatars.githubusercontent.com/u/583231?v=4',
-    alt: 'PA',
-  },
 } satisfies Meta<typeof ProfileAvatar>;
 
 export default meta;
