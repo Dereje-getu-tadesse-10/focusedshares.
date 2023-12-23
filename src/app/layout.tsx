@@ -64,6 +64,7 @@ export default function RootLayout({
           data-website-id='05b1b74c-1c34-418a-871b-5f04df643156'
         />
         <Script
+          id='HotjarAnalytics'
           dangerouslySetInnerHTML={{
             __html: `
                   (function(h,o,t,j,a,r){
