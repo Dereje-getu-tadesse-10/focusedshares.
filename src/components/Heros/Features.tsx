@@ -7,18 +7,21 @@ const features = [
   {
     id: 1,
     icon: <Music />,
+    title: 'Select your soundtrack',
     content:
       'Choose from a diverse selection of music to enhance your concentration',
   },
   {
     id: 2,
     icon: <AudioLines />,
+    title: 'Distraction-free music',
     content:
       'Enjoy your chosen music without any distractions, allowing for focused work',
   },
   {
     id: 3,
     icon: <Share2 />,
+    title: 'Instant music sharing',
     content: 'Easily and quickly share your favorite music selections',
   },
 ];
@@ -36,9 +39,9 @@ export const Features = () => {
       <h1
         className={css({
           color: 'var(--colors-text)',
-          fontWeight: '500',
+          fontWeight: 'semibold',
           textAlign: 'center',
-          fontSize: 'lg',
+          fontSize: '2xl',
         })}
       >
         Features
@@ -47,7 +50,7 @@ export const Features = () => {
         className={css({
           display: 'grid',
           gridTemplateColumns: '1fr',
-          mt: '3rem',
+          mt: '2rem',
           gap: '2rem',
           sm: {
             gridTemplateColumns: '1fr 1fr',
@@ -76,6 +79,16 @@ export const Features = () => {
             >
               {feature.icon}
             </div>
+            <h1
+              className={css({
+                color: 'var(--colors-text)',
+                textAlign: 'center',
+                fontWeight: 'semibold',
+                mb: '.7rem',
+              })}
+            >
+              {feature.title}
+            </h1>
             <p
               className={css({
                 color: 'var(--colors-text-muted)',
@@ -88,17 +101,6 @@ export const Features = () => {
             </p>
           </div>
         ))}
-      </div>
-      <div
-        className={css({
-          display: 'flex',
-          justifyContent: 'center',
-          mt: '3rem',
-        })}
-      >
-        <Link href={'/songs'} className={button({ visual: 'solid' })}>
-          Discover more songs
-        </Link>
       </div>
     </section>
   );
