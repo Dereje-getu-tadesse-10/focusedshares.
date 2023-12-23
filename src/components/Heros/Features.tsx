@@ -1,7 +1,5 @@
-import { button } from '@/src/stories/button/button';
 import { css } from '@/styled-system/css';
 import { Music, AudioLines, Share2 } from 'lucide-react';
-import Link from 'next/link';
 
 const features = [
   {
