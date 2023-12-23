@@ -21,6 +21,7 @@
     "@prisma/extension-accelerate": "^0.6.2",
     "@storybook/manager-api": "^7.6.5",
     "@storybook/theming": "^7.6.5",
+    "avvvatars-react": "^0.4.2",
     "lucide-react": "^0.294.0",
     "next": "14.0.4",
     "next-auth": "5.0.0-beta.4",

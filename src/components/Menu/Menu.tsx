@@ -74,12 +74,7 @@ const menuGroupLabel = css({
   fontSize: 'sm',
 });
 
-type AppMenuProps = {
-  src: string;
-  alt: string;
-};
-
-export const AppMenu = ({ src, alt }: { src: string; alt: string }) => (
+export const AppMenu = ({ email }: { email: string }) => (
   <Menu.Root
     onSelect={(id) => {
       const selectedItem = menuItems.find((item) =>
@@ -97,7 +92,7 @@ export const AppMenu = ({ src, alt }: { src: string; alt: string }) => (
     }}
   >
     <Menu.Trigger>
-      <ProfileAvatar src={src} alt={alt} />
+      <ProfileAvatar email={email} />
     </Menu.Trigger>
     <Menu.Positioner>
       <Menu.Content className={content}>

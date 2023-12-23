@@ -52,11 +52,7 @@ export const Navbar = () => {
         >
           <Switcher />
           {session ? (
-            <AppMenu
-              alt='hello'
-              src={session?.user?.image as string}
-              key={'app-menu'}
-            />
+            <AppMenu key={'app-menu'} email={session?.user?.email} />
           ) : (
             <Button
               visual='solid'
