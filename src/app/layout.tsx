@@ -5,7 +5,6 @@ import { Providers } from './providers';
 import { Navbar } from '@/src/components/Navbar/Navbar';
 import { Footer } from '../components/Footer/Footer';
 import Script from 'next/script';
-
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
