@@ -75,6 +75,9 @@ export const Footer = () => {
             <li>
               <Link href='/cookies'>Cookies</Link>
             </li>
+            <li>
+              <Link href='/privacy'>Privacy</Link>
+            </li>
           </ul>
         </div>
       </div>
