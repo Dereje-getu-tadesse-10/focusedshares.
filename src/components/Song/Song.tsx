@@ -171,7 +171,7 @@ export const Song = ({ song }: { song: MinimalSong }) => {
     >
       <Image
         className={css({
-          rounded: '2xl',
+          rounded: '.5rem',
           width: '100%',
           _hover: {
             rounded: '0',

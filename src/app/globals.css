@@ -57,14 +57,14 @@ body {
 }
 
 .playlist-card {
-  border-radius: 10px;
   overflow: hidden;
-  cursor: pointer;
   position: relative;
   max-width: inherit;
   width: 100%;
   height: 310px;
-
+  border-radius: 0.5rem;
+  cursor: pointer;
+  
   img {
     position: absolute;
     object-fit: cover;
